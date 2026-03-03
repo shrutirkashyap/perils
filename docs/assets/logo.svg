@@ -1,0 +1,10 @@
+<svg width="360" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="360" height="100" fill="none" />
+  
+  <text x="10" y="80" font-family="Arial, sans-serif" font-weight="900" font-size="72" fill="#003366" letter-spacing="-1">
+    PERILS
+  </text>
+  
+  <rect x="300" y="30" width="16" height="16" fill="#8dc63f" />
+  <rect x="300" y="60" width="16" height="16" fill="#8dc63f" />
+</svg>

@@ -1,0 +1,267 @@
+---
+title: "Perils Database"
+format:
+  html:
+    page-layout: full
+---
+
+::: {.hero}
+::: {.hero-inner}
+:::{.hero-subtitle}
+Real-time tracking of environmental risks across the world.
+:::
+:::
+:::
+
+```{ojs}
+//| echo: false
+// Load the environmental risk data
+data = FileAttachment("data/environmental_risks.csv").csv({ typed: true })
+
+// Get unique values for filters
+regions = ["All Regions", ...new Set(data.map(d => d.region))]
+riskTypes = ["All Types", ...new Set(data.map(d => d.risk_type))]
+```
+
+::: {.panel-tabset}
+
+## 🌍 Map View
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-3}
+
+::: {.filter-section}
+### Filters
+```{ojs}
+//| echo: false
+viewof selectedRegion = Inputs.select(regions, {
+  label: "Region",
+  value: "All Regions"
+})
+
+viewof selectedRiskType = Inputs.select(riskTypes, {
+  label: "Risk Type",
+  value: "All Types"
+})
+
+viewof minRiskScore = Inputs.range([0, 10], {
+  label: "Minimum Risk Score",
+  value: 0,
+  step: 0.5
+})
+```
+:::
+
+```{ojs}
+//| echo: false
+// Filter data based on user selections
+filteredData = data.filter(d => {
+  const regionMatch = selectedRegion === "All Regions" || d.region === selectedRegion
+  const riskMatch = selectedRiskType === "All Types" || d.risk_type === selectedRiskType
+  const scoreMatch = d.risk_score >= minRiskScore
+  return regionMatch && riskMatch && scoreMatch
+})
+```
+
+::: {.kpi-grid}
+::: {.stat-card style="background: linear-gradient(135deg, #e74c3c, #c0392b);"}
+### ${filteredData.length}
+Total Risk Events
+:::
+
+::: {.stat-card style="background: linear-gradient(135deg, #f39c12, #d68910);"}
+### ${d3.format(".1f")(d3.mean(filteredData, d => d.risk_score))}
+Average Risk Score
+:::
+
+::: {.stat-card style="background: linear-gradient(135deg, #27ae60, #229954);"}
+### ${d3.format(".2s")(d3.sum(filteredData, d => d.population_affected))}
+People Affected
+:::
+:::
+
+:::
+
+::: {.g-col-12 .g-col-md-9}
+
+### World Map
+
+```{ojs}
+//| echo: false
+// Leaflet CSS
+html`<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>`
+```
+
+```{ojs}
+//| echo: false
+leaflet = require("leaflet@1.9.4")
+```
+
+```{ojs}
+//| echo: false
+mapDisplay = {
+  const container = html`<div class="map-container"><div class="map-inner"></div></div>`
+  yield container
+
+  // Initialize map on the inner element
+  const map = leaflet.map(container.querySelector(".map-inner")).setView([20, 0], 2)
+
+  leaflet.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap contributors",
+    maxZoom: 18
+  }).addTo(map)
+
+  const colors = {
+    Flood: "#3498db",
+    Drought: "#f39c12",
+    Wildfire: "#e74c3c",
+    Storm: "#9b59b6"
+  }
+
+  filteredData.forEach(d => {
+    leaflet.circleMarker([d.lat, d.lon], {
+      radius: d.risk_score * 2.5,
+      fillColor: colors[d.risk_type] ?? "#64748b",
+      color: "#fff",
+      weight: 2,
+      fillOpacity: 0.7
+    })
+      .bindPopup(`
+        <b>${d.country}</b><br>
+        Type: ${d.risk_type}<br>
+        Score: ${d.risk_score}/10<br>
+        Affected: ${d3.format(",")(d.population_affected)}
+      `)
+      .addTo(map)
+  })
+
+  setTimeout(() => map.invalidateSize(), 100)
+}
+```
+#### Legend
+
+<div class="legend">
+  <span class="legend-item">Flood</span>
+  <span class="legend-item">Drought</span>
+  <span class="legend-item">Wildfire</span>
+  <span class="legend-item">Storm</span>
+</div>
+
+:::
+
+:::
+
+## 📊 Analytics
+
+::: {.grid}
+
+::: {.g-col-12 .g-col-md-6}
+### Risk Distribution by Type
+```{ojs}
+//| echo: false
+Plot.plot({
+  marginLeft: 60,
+  marginBottom: 60,
+  x: { label: "Risk Type" },
+  y: { label: "Count" },
+  marks: [
+    Plot.barY(
+      filteredData,
+      Plot.groupX({ y: "count" }, { x: "risk_type", fill: "risk_type", tip: true })
+    ),
+    Plot.ruleY([0])
+  ],
+  color: {
+    domain: ["Flood", "Drought", "Wildfire", "Storm"],
+    range: ["#3498db", "#f39c12", "#e74c3c", "#9b59b6"]
+  }
+})
+```
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### Average Risk Score by Region
+```{ojs}
+//| echo: false
+Plot.plot({
+  marginLeft: 120,
+  marginBottom: 60,
+  x: { label: "Average Risk Score" },
+  y: { label: "Region" },
+  marks: [
+    Plot.barX(
+      filteredData,
+      Plot.groupY({ x: "mean" }, { y: "region", x: "risk_score", tip: true })
+    ),
+    Plot.ruleX([0])
+  ]
+})
+```
+:::
+
+::: {.g-col-12}
+### Population Affected by Country (Top 15)
+```{ojs}
+//| echo: false
+topCountries = filteredData
+  .slice()
+  .sort((a, b) => b.population_affected - a.population_affected)
+  .slice(0, 15)
+
+Plot.plot({
+  marginLeft: 100,
+  marginBottom: 60,
+  height: 400,
+  x: { label: "Population Affected", tickFormat: "~s" },
+  y: { label: "Country" },
+  marks: [
+    Plot.barX(topCountries, {
+      x: "population_affected",
+      y: "country",
+      fill: "risk_type",
+      tip: true,
+      sort: { y: "x", reverse: true }
+    }),
+    Plot.ruleX([0])
+  ],
+  color: {
+    domain: ["Flood", "Drought", "Wildfire", "Storm"],
+    range: ["#3498db", "#f39c12", "#e74c3c", "#9b59b6"]
+  }
+})
+```
+:::
+
+:::
+
+## 📋 Data Table
+```{ojs}
+//| echo: false
+Inputs.table(filteredData, {
+  columns: ["country", "region", "risk_type", "risk_score", "population_affected"],
+  header: {
+    country: "Country",
+    region: "Region",
+    risk_type: "Risk Type",
+    risk_score: "Risk Score",
+    population_affected: "Population Affected"
+  },
+  format: {
+    population_affected: d => d3.format(",")(d)
+  },
+  width: {
+    country: 150,
+    region: 120,
+    risk_type: 110,
+    risk_score: 110,
+    population_affected: 170
+  }
+})
+```
+
+:::
+
+---
+
+**Data Source:** Simulated environmental risk data for demonstration purposes. Last updated: 2026.

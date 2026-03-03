@@ -1,0 +1,64 @@
+---
+title: ""
+---
+
+:::  {.content-wrap}
+
+## About the Atlas
+
+The Environmental Risk Atlas is an interactive platform designed to visualize and monitor environmental risks across the globe. Our mission is to provide accessible, data-driven insights into the environmental challenges facing different regions worldwide.
+
+### Our Mission
+
+We believe that understanding environmental risks is the first step toward building resilience and developing effective mitigation strategies. By making complex environmental data accessible and interactive, we aim to:
+
+- **Raise Awareness:** Help communities understand the environmental risks they face
+- **Support Decision-Making:** Provide policymakers with data-driven insights
+- **Enable Research:** Facilitate environmental research and analysis
+- **Foster Collaboration:** Connect stakeholders working on environmental resilience
+
+### What We Track
+
+Our platform monitors four major categories of environmental risks:
+
+::: {.feature-card}
+#### 🌊 Flood Risks
+Monitoring areas vulnerable to flooding from rivers, coastal surge, and extreme precipitation events.
+:::
+
+::: {.feature-card}
+#### 🌵 Drought Conditions
+Tracking regions experiencing water scarcity and prolonged periods of insufficient rainfall.
+:::
+
+::: {.feature-card}
+#### 🔥 Wildfire Threats
+Identifying areas at high risk of wildfires due to dry conditions, vegetation, and climate factors.
+:::
+
+::: {.feature-card}
+#### 🌪️ Storm Events
+Monitoring severe weather patterns including hurricanes, cyclones, and extreme storm systems.
+:::
+
+### Get Involved
+
+We welcome collaboration from:
+
+- Environmental scientists and researchers
+- Data scientists and developers
+- Policy makers and planners
+- Community organizations
+- Anyone interested in environmental resilience
+
+Visit our [Contact page](contact.qmd) to get in touch or contribute to the project.
+
+### Open Source
+
+This project is open source and available on GitHub. We encourage contributions, feedback, and collaboration from the community.
+
+---
+
+*Last updated: March 2026*
+
+:::

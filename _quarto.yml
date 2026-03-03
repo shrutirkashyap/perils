@@ -1,0 +1,30 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: ""
+  navbar:
+    logo: assets/logo.svg
+    background: light
+    left:
+      - text: "About"
+        href: pages/about.qmd
+      - text: "Contact"
+        href: pages/contact.qmd
+  page-footer:
+    center: |
+      © 2026 Perils. All rights reserved.
+    right:
+      - icon: github
+        href: https://github.com/Amareteklay/perils
+
+format:
+  html:
+    theme: cosmo
+    css: assets/styles.css
+    toc: false
+    smooth-scroll: true
+    link-external-newwindow: true
+    grid:
+      body-width: 1100px

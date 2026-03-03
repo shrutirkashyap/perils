@@ -1,0 +1,41 @@
+country,lat,lon,risk_type,risk_score,region,population_affected,year
+United States,37.09,-95.71,Flood,7.5,North America,2500000,2024
+Canada,56.13,-106.35,Wildfire,8.2,North America,450000,2024
+Mexico,23.63,-102.55,Drought,6.8,North America,1800000,2024
+Brazil,-14.23,-51.92,Drought,8.9,South America,3200000,2024
+Argentina,-38.42,-63.62,Flood,5.4,South America,890000,2024
+Colombia,4.57,-74.30,Storm,7.1,South America,1200000,2024
+United Kingdom,55.38,-3.44,Storm,6.2,Europe,750000,2024
+Germany,51.17,10.45,Flood,7.8,Europe,1600000,2024
+France,46.23,2.21,Drought,5.9,Europe,980000,2024
+Spain,40.46,-3.75,Wildfire,8.5,Europe,1100000,2024
+Italy,41.87,12.57,Flood,6.7,Europe,1350000,2024
+Norway,60.47,8.47,Storm,5.2,Europe,320000,2024
+Nigeria,9.08,8.68,Flood,9.1,Africa,4500000,2024
+South Africa,-30.56,22.94,Drought,8.7,Africa,2800000,2024
+Kenya,-0.02,37.91,Drought,9.3,Africa,3600000,2024
+Egypt,26.82,30.80,Drought,7.9,Africa,2100000,2024
+Morocco,31.79,-7.09,Wildfire,6.5,Africa,890000,2024
+China,35.86,104.20,Flood,8.4,Asia,5200000,2024
+India,20.59,78.96,Flood,9.5,Asia,6800000,2024
+Japan,36.20,138.25,Storm,7.6,Asia,2300000,2024
+Indonesia,-0.79,113.92,Wildfire,8.8,Asia,3400000,2024
+Australia,-25.27,133.78,Wildfire,9.2,Oceania,1200000,2024
+Thailand,15.87,100.99,Flood,7.3,Asia,1900000,2024
+Philippines,12.88,121.77,Storm,8.1,Asia,2600000,2024
+Bangladesh,23.68,90.36,Flood,9.8,Asia,4200000,2024
+Pakistan,30.38,69.35,Flood,8.6,Asia,3100000,2024
+Vietnam,14.06,108.28,Storm,7.4,Asia,1700000,2024
+Turkey,38.96,35.24,Wildfire,6.9,Asia,1400000,2024
+Russia,61.52,105.32,Wildfire,7.7,Europe,2200000,2024
+New Zealand,-40.90,174.89,Storm,5.8,Oceania,380000,2024
+Chile,-35.68,-71.54,Drought,7.2,South America,1150000,2024
+Peru,-9.19,-75.02,Flood,6.4,South America,980000,2024
+Venezuela,6.42,-66.59,Storm,7.8,South America,1320000,2024
+Poland,51.92,19.15,Flood,6.1,Europe,890000,2024
+Sweden,60.13,18.64,Wildfire,5.6,Europe,420000,2024
+Greece,39.07,21.82,Wildfire,8.3,Europe,980000,2024
+Portugal,39.40,-8.22,Wildfire,8.0,Europe,760000,2024
+Iran,32.43,53.69,Drought,8.1,Asia,2400000,2024
+Saudi Arabia,23.89,45.08,Drought,7.5,Asia,1600000,2024
+South Korea,35.91,127.77,Storm,6.8,Asia,1100000,2024

@@ -1,5 +1,5 @@
 ---
-title: "Perils Database"
+title: "Perils Atlas"
 format:
   html:
     page-layout: full
@@ -7,89 +7,204 @@ format:
 
 ::: {.hero}
 ::: {.hero-inner}
+# Ecological Jurisprudence Atlas
+
 :::{.hero-subtitle}
-Real-time tracking of environmental risks across the world.
+Explore 673 geocoded initiatives across ecological jurisprudence, rights of nature, personhood, indigenous models, animal rights, and eco-governance.
 :::
 :::
 :::
 
 ```{ojs}
 //| echo: false
-// Load the environmental risk data
-data = FileAttachment("data/environmental_risks.csv").csv({ typed: true })
+records = FileAttachment("data/02_cleaned/ejm_records.csv").csv({ typed: true })
+jurisprudenceTypes = FileAttachment("data/02_cleaned/ejm_jurisprudence_types.csv").csv({ typed: true })
+actorTypes = FileAttachment("data/02_cleaned/ejm_actor_types.csv").csv({ typed: true })
+summary = FileAttachment("data/02_cleaned/ejm_summary.json").json()
 
-// Get unique values for filters
-regions = ["All Regions", ...new Set(data.map(d => d.region))]
-riskTypes = ["All Types", ...new Set(data.map(d => d.risk_type))]
+regions = ["All Regions", ...new Set(records.map(d => d.region).filter(Boolean))]
+legalProvisions = ["All Legal Provisions", ...new Set(records.map(d => d.legal_provision).filter(Boolean))]
+statusOptions = ["All Statuses", ...new Set(records.map(d => d.status_current).filter(Boolean))]
+jurisprudenceOptions = ["All Jurisprudence Types", ...new Set(jurisprudenceTypes.map(d => d.jurisprudence_type).filter(Boolean))]
+actorTypeOptions = ["All Actor Types", ...new Set(actorTypes.map(d => d.actor_type).filter(Boolean))]
+
+yearExtent = d3.extent(records, d => d.year_initiated)
+
+themeOptions = [
+  { label: "Rights of Nature", column: "ron" },
+  { label: "Personhood", column: "personhood" },
+  { label: "Animal Rights", column: "animal_rights" },
+  { label: "Local Eco Knowledge", column: "lek" },
+  { label: "Indigenous Framing", column: "indigenous_framing" },
+  { label: "Eco-Governance", column: "eco_gov" }
+]
+
+legalProvisionColors = new Map([
+  ["Legislation", "#b45309"],
+  ["Court Case", "#0f766e"],
+  ["Declaration", "#7c3aed"],
+  ["Civil Society Declaration", "#dc2626"],
+  ["Constitution", "#1d4ed8"],
+  ["Indigenous Declaration", "#059669"],
+  ["Indigenous Law", "#0891b2"],
+  ["Policy", "#334155"],
+  ["Civil Society Tribunal", "#be185d"],
+  ["Position Statement", "#9333ea"],
+  ["Private Sector Governance", "#4f46e5"]
+])
 ```
 
 ::: {.panel-tabset}
 
-## 🌍 Map View
+## Map View
 
 ::: {.grid}
 
-::: {.g-col-12 .g-col-md-3}
+::: {.g-col-12 .g-col-md-4}
 
 ::: {.filter-section}
 ### Filters
 ```{ojs}
 //| echo: false
+viewof searchQuery = Inputs.text({
+  label: "Search",
+  placeholder: "Title, country, location, actor"
+})
+
 viewof selectedRegion = Inputs.select(regions, {
   label: "Region",
   value: "All Regions"
 })
 
-viewof selectedRiskType = Inputs.select(riskTypes, {
-  label: "Risk Type",
-  value: "All Types"
+viewof selectedLegalProvision = Inputs.select(legalProvisions, {
+  label: "Legal Provision",
+  value: "All Legal Provisions"
 })
 
-viewof minRiskScore = Inputs.range([0, 10], {
-  label: "Minimum Risk Score",
-  value: 0,
-  step: 0.5
+viewof selectedStatus = Inputs.select(statusOptions, {
+  label: "Current Status",
+  value: "All Statuses"
+})
+
+viewof selectedJurisprudenceType = Inputs.select(jurisprudenceOptions, {
+  label: "Jurisprudence Type",
+  value: "All Jurisprudence Types"
+})
+
+viewof selectedActorType = Inputs.select(actorTypeOptions, {
+  label: "Initiating Actor Type",
+  value: "All Actor Types"
+})
+
+viewof selectedThemes = Inputs.checkbox(themeOptions.map(d => d.label), {
+  label: "Theme Flags"
+})
+
+viewof minYear = Inputs.range(yearExtent, {
+  label: "From Year",
+  value: yearExtent[0],
+  step: 1
+})
+
+viewof maxYear = Inputs.range(yearExtent, {
+  label: "To Year",
+  value: yearExtent[1],
+  step: 1
 })
 ```
-:::
 
 ```{ojs}
 //| echo: false
-// Filter data based on user selections
-filteredData = data.filter(d => {
+normalizedSearch = (searchQuery ?? "").trim().toLowerCase()
+lowerYear = Math.min(minYear, maxYear)
+upperYear = Math.max(minYear, maxYear)
+selectedThemeColumns = themeOptions
+  .filter(d => selectedThemes.includes(d.label))
+  .map(d => d.column)
+
+filteredData = records.filter(d => {
+  const textBlob = [
+    d.title,
+    d.country_name,
+    d.location,
+    d.initiating_actor_name,
+    d.ecological_actor_name,
+    d.jurisprudence_types
+  ].join(" ").toLowerCase()
+
   const regionMatch = selectedRegion === "All Regions" || d.region === selectedRegion
-  const riskMatch = selectedRiskType === "All Types" || d.risk_type === selectedRiskType
-  const scoreMatch = d.risk_score >= minRiskScore
-  return regionMatch && riskMatch && scoreMatch
+  const legalProvisionMatch = selectedLegalProvision === "All Legal Provisions" || d.legal_provision === selectedLegalProvision
+  const statusMatch = selectedStatus === "All Statuses" || d.status_current === selectedStatus
+  const yearMatch = (!d.year_initiated || (d.year_initiated >= lowerYear && d.year_initiated <= upperYear))
+  const searchMatch = !normalizedSearch || textBlob.includes(normalizedSearch)
+
+  const jurisprudenceList = d.jurisprudence_types ? d.jurisprudence_types.split(" | ") : []
+  const actorTypeList = d.initiating_actor_types ? d.initiating_actor_types.split(" | ") : []
+
+  const jurisprudenceMatch = selectedJurisprudenceType === "All Jurisprudence Types" || jurisprudenceList.includes(selectedJurisprudenceType)
+  const actorTypeMatch = selectedActorType === "All Actor Types" || actorTypeList.includes(selectedActorType)
+  const themeMatch = selectedThemeColumns.every(column => d[column] === 1)
+
+  return regionMatch && legalProvisionMatch && statusMatch && yearMatch && searchMatch && jurisprudenceMatch && actorTypeMatch && themeMatch
 })
+
+filteredIds = new Set(filteredData.map(d => d.record_id))
+filteredJurisprudence = jurisprudenceTypes.filter(d => filteredIds.has(d.record_id))
+filteredActorTypes = actorTypes.filter(d => filteredIds.has(d.record_id))
+
+countryCount = new Set(filteredData.map(d => d.country_name).filter(Boolean)).size
+ronCount = d3.sum(filteredData, d => d.ron)
+indigenousCount = d3.sum(filteredData, d => d.indigenous_framing || d.actor_indigenous)
+minFilteredYear = d3.min(filteredData, d => d.year_initiated)
+maxFilteredYear = d3.max(filteredData, d => d.year_initiated)
+yearLabel = filteredData.length ? `${minFilteredYear}-${maxFilteredYear}` : "No data"
 ```
+:::
 
 ::: {.kpi-grid}
-::: {.stat-card style="background: linear-gradient(135deg, #e74c3c, #c0392b);"}
+::: {.stat-card style="background: linear-gradient(135deg, #1d4ed8, #1e3a8a); color: white;"}
 ### ${filteredData.length}
-Total Risk Events
+Initiatives in view
 :::
 
-::: {.stat-card style="background: linear-gradient(135deg, #f39c12, #d68910);"}
-### ${d3.format(".1f")(d3.mean(filteredData, d => d.risk_score))}
-Average Risk Score
+::: {.stat-card style="background: linear-gradient(135deg, #0f766e, #134e4a); color: white;"}
+### ${countryCount}
+Countries represented
 :::
 
-::: {.stat-card style="background: linear-gradient(135deg, #27ae60, #229954);"}
-### ${d3.format(".2s")(d3.sum(filteredData, d => d.population_affected))}
-People Affected
+::: {.stat-card style="background: linear-gradient(135deg, #7c3aed, #581c87); color: white;"}
+### ${yearLabel}
+Initiation span
 :::
+
+::: {.stat-card style="background: linear-gradient(135deg, #b45309, #78350f); color: white;"}
+### ${ronCount}
+Tagged Rights of Nature
+:::
+
+::: {.stat-card style="background: linear-gradient(135deg, #059669, #064e3b); color: white;"}
+### ${indigenousCount}
+Indigenous-linked records
+:::
+::: 
+
+::: {.detail-card}
+**Dataset snapshot**
+
+- ${summary.rows} total records in the current atlas
+- ${summary.countries} countries represented
+- ${summary.min_year}-${summary.max_year} temporal coverage
+- Prepared for comparative legal and ecological analysis
 :::
 
 :::
 
-::: {.g-col-12 .g-col-md-9}
+::: {.g-col-12 .g-col-md-8}
 
-### World Map
+### Global initiative map
 
 ```{ojs}
 //| echo: false
-// Leaflet CSS
 html`<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>`
 ```
 
@@ -104,96 +219,160 @@ mapDisplay = {
   const container = html`<div class="map-container"><div class="map-inner"></div></div>`
   yield container
 
-  // Initialize map on the inner element
-  const map = leaflet.map(container.querySelector(".map-inner")).setView([20, 0], 2)
+  const map = leaflet.map(container.querySelector(".map-inner"), {
+    worldCopyJump: true,
+    scrollWheelZoom: false
+  }).setView([15, -10], 2)
 
   leaflet.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "© OpenStreetMap contributors",
+    attribution: "&copy; OpenStreetMap contributors",
     maxZoom: 18
   }).addTo(map)
 
-  const colors = {
-    Flood: "#3498db",
-    Drought: "#f39c12",
-    Wildfire: "#e74c3c",
-    Storm: "#9b59b6"
-  }
+  const markers = []
 
   filteredData.forEach(d => {
-    leaflet.circleMarker([d.lat, d.lon], {
-      radius: d.risk_score * 2.5,
-      fillColor: colors[d.risk_type] ?? "#64748b",
-      color: "#fff",
-      weight: 2,
-      fillOpacity: 0.7
+    if (d.lat == null || d.lon == null || d.lat === "" || d.lon === "") return
+    const fillColor = legalProvisionColors.get(d.legal_provision) ?? "#64748b"
+    const marker = leaflet.circleMarker([d.lat, d.lon], {
+      radius: 6,
+      fillColor,
+      color: "#ffffff",
+      weight: 1.5,
+      fillOpacity: 0.82
     })
-      .bindPopup(`
-        <b>${d.country}</b><br>
-        Type: ${d.risk_type}<br>
-        Score: ${d.risk_score}/10<br>
-        Affected: ${d3.format(",")(d.population_affected)}
-      `)
-      .addTo(map)
+
+    marker.bindPopup(`
+      <div style="min-width: 240px;">
+        <strong>${d.title}</strong><br>
+        <span>${d.country_name}${d.location ? `, ${d.location}` : ""}</span><br>
+        <span>${d.legal_provision} | ${d.status_current}</span><br>
+        <span>Initiated: ${d.year_initiated || "Unspecified"}</span><br>
+        <span>${d.jurisprudence_types || "Unspecified"}</span><br>
+        <a href="${d.permalink}" target="_blank" rel="noopener noreferrer">Open source record</a>
+      </div>
+    `)
+
+    marker.addTo(map)
+    markers.push(marker)
   })
 
+  if (markers.length) {
+    const group = leaflet.featureGroup(markers)
+    map.fitBounds(group.getBounds().pad(0.15))
+  }
+
   setTimeout(() => map.invalidateSize(), 100)
+  invalidation.then(() => map.remove())
 }
 ```
-#### Legend
 
-<div class="legend">
-  <span class="legend-item">Flood</span>
-  <span class="legend-item">Drought</span>
-  <span class="legend-item">Wildfire</span>
-  <span class="legend-item">Storm</span>
-</div>
+#### Legal provision legend
 
+```{ojs}
+//| echo: false
+legendItems = Array.from(legalProvisionColors.entries())
+  .filter(([name]) => filteredData.some(d => d.legal_provision === name))
+  .slice(0, 8)
+
+html`<div class="legend">${legendItems.map(([name, color]) => html`<span class="legend-item"><span class="legend-dot" style="background:${color}"></span>${name}</span>`)}</div>`
+```
+
+::: {.detail-card}
+Map markers are colored by legal provision type. Use the filters to narrow by region, year, jurisprudence type, actor type, or theme flags.
 :::
 
 :::
 
-## 📊 Analytics
+:::
+
+## Analytics
 
 ::: {.grid}
 
 ::: {.g-col-12 .g-col-md-6}
-### Risk Distribution by Type
+### Initiatives by region
 ```{ojs}
 //| echo: false
 Plot.plot({
-  marginLeft: 60,
-  marginBottom: 60,
-  x: { label: "Risk Type" },
-  y: { label: "Count" },
+  marginLeft: 120,
+  marginBottom: 40,
+  height: 300,
+  x: { label: "Initiatives" },
+  y: { label: null },
   marks: [
-    Plot.barY(
-      filteredData,
-      Plot.groupX({ y: "count" }, { x: "risk_type", fill: "risk_type", tip: true })
-    ),
-    Plot.ruleY([0])
-  ],
-  color: {
-    domain: ["Flood", "Drought", "Wildfire", "Storm"],
-    range: ["#3498db", "#f39c12", "#e74c3c", "#9b59b6"]
-  }
+    Plot.barX(filteredData, Plot.groupY({ x: "count" }, { y: "region", fill: "region", tip: true, sort: { y: "x", reverse: true } })),
+    Plot.ruleX([0])
+  ]
 })
 ```
 :::
 
 ::: {.g-col-12 .g-col-md-6}
-### Average Risk Score by Region
+### Top legal provision types
 ```{ojs}
 //| echo: false
+topLegalProvisions = d3.rollups(filteredData, values => values.length, d => d.legal_provision)
+  .sort((a, b) => d3.descending(a[1], b[1]))
+  .slice(0, 8)
+  .map(([legal_provision, count]) => ({ legal_provision, count }))
+
 Plot.plot({
-  marginLeft: 120,
-  marginBottom: 60,
-  x: { label: "Average Risk Score" },
-  y: { label: "Region" },
+  marginLeft: 70,
+  marginBottom: 80,
+  height: 300,
+  x: { label: null, tickRotate: -25 },
+  y: { label: "Records" },
+  color: { legend: false },
   marks: [
-    Plot.barX(
-      filteredData,
-      Plot.groupY({ x: "mean" }, { y: "region", x: "risk_score", tip: true })
-    ),
+    Plot.barY(topLegalProvisions, { x: "legal_provision", y: "count", fill: "legal_provision", tip: true }),
+    Plot.ruleY([0])
+  ]
+})
+```
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### Initiatives by year initiated
+```{ojs}
+//| echo: false
+yearlyCounts = d3.rollups(filteredData.filter(d => d.year_initiated), values => values.length, d => d.year_initiated)
+  .sort((a, b) => d3.ascending(a[0], b[0]))
+  .map(([year_initiated, count]) => ({ year_initiated, count }))
+
+Plot.plot({
+  marginLeft: 60,
+  marginBottom: 50,
+  height: 300,
+  x: { label: "Year initiated" },
+  y: { label: "Records" },
+  marks: [
+    Plot.areaY(yearlyCounts, { x: "year_initiated", y: "count", fill: "#93c5fd" }),
+    Plot.lineY(yearlyCounts, { x: "year_initiated", y: "count", stroke: "#1d4ed8" }),
+    Plot.dot(yearlyCounts, { x: "year_initiated", y: "count", fill: "#1d4ed8", r: 2.5, tip: true }),
+    Plot.ruleY([0])
+  ]
+})
+```
+:::
+
+::: {.g-col-12 .g-col-md-6}
+### Top jurisprudence types
+```{ojs}
+//| echo: false
+topJurisprudenceTypes = d3.rollups(filteredJurisprudence, values => values.length, d => d.jurisprudence_type)
+  .sort((a, b) => d3.descending(a[1], b[1]))
+  .slice(0, 10)
+  .map(([jurisprudence_type, count]) => ({ jurisprudence_type, count }))
+
+Plot.plot({
+  marginLeft: 140,
+  marginBottom: 40,
+  height: 320,
+  x: { label: "Records" },
+  y: { label: null },
+  marks: [
+    Plot.barX(topJurisprudenceTypes, { x: "count", y: "jurisprudence_type", fill: "#7c3aed", tip: true, sort: { y: "x", reverse: true } }),
     Plot.ruleX([0])
   ]
 })
@@ -201,61 +380,71 @@ Plot.plot({
 :::
 
 ::: {.g-col-12}
-### Population Affected by Country (Top 15)
+### Top initiating actor types
 ```{ojs}
 //| echo: false
-topCountries = filteredData
-  .slice()
-  .sort((a, b) => b.population_affected - a.population_affected)
-  .slice(0, 15)
+topActorTypes = d3.rollups(filteredActorTypes, values => values.length, d => d.actor_type)
+  .sort((a, b) => d3.descending(a[1], b[1]))
+  .slice(0, 12)
+  .map(([actor_type, count]) => ({ actor_type, count }))
 
 Plot.plot({
-  marginLeft: 100,
-  marginBottom: 60,
-  height: 400,
-  x: { label: "Population Affected", tickFormat: "~s" },
-  y: { label: "Country" },
+  marginLeft: 170,
+  marginBottom: 40,
+  height: 360,
+  x: { label: "Records" },
+  y: { label: null },
   marks: [
-    Plot.barX(topCountries, {
-      x: "population_affected",
-      y: "country",
-      fill: "risk_type",
-      tip: true,
-      sort: { y: "x", reverse: true }
-    }),
+    Plot.barX(topActorTypes, { x: "count", y: "actor_type", fill: "#0f766e", tip: true, sort: { y: "x", reverse: true } }),
     Plot.ruleX([0])
-  ],
-  color: {
-    domain: ["Flood", "Drought", "Wildfire", "Storm"],
-    range: ["#3498db", "#f39c12", "#e74c3c", "#9b59b6"]
-  }
+  ]
 })
 ```
 :::
 
 :::
 
-## 📋 Data Table
+## Data Table
+
+::: {.detail-card}
+The record table is structured to support comparative browsing across geography, legal form, status, and jurisprudential framing.
+:::
+
 ```{ojs}
 //| echo: false
 Inputs.table(filteredData, {
-  columns: ["country", "region", "risk_type", "risk_score", "population_affected"],
+  columns: [
+    "title",
+    "country_name",
+    "region",
+    "year_initiated",
+    "legal_provision",
+    "status_current",
+    "jurisprudence_types",
+    "permalink"
+  ],
   header: {
-    country: "Country",
+    title: "Title",
+    country_name: "Country",
     region: "Region",
-    risk_type: "Risk Type",
-    risk_score: "Risk Score",
-    population_affected: "Population Affected"
+    year_initiated: "Year",
+    legal_provision: "Legal Provision",
+    status_current: "Status",
+    jurisprudence_types: "Jurisprudence Types",
+    permalink: "Source"
   },
   format: {
-    population_affected: d => d3.format(",")(d)
+    permalink: value => html`<a href="${value}" target="_blank" rel="noopener noreferrer">Open</a>`
   },
   width: {
-    country: 150,
+    title: 360,
+    country_name: 120,
     region: 120,
-    risk_type: 110,
-    risk_score: 110,
-    population_affected: 170
+    year_initiated: 80,
+    legal_provision: 180,
+    status_current: 110,
+    jurisprudence_types: 240,
+    permalink: 80
   }
 })
 ```
@@ -264,4 +453,4 @@ Inputs.table(filteredData, {
 
 ---
 
-**Data Source:** Simulated environmental risk data for demonstration purposes. Last updated: 2026.
+**Data source:** EJM ecological jurisprudence initiative records, prepared for interactive analysis and mapping.

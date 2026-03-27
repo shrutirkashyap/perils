@@ -1,20 +1,27 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - pages/about.qmd
+    - pages/methodology.qmd
+    - pages/contact.qmd
 
 website:
-  title: ""
+  title: "Perils"
   navbar:
     logo: assets/logo.svg
     background: light
     left:
       - text: "About"
         href: pages/about.qmd
+      - text: "Methodology"
+        href: pages/methodology.qmd
       - text: "Contact"
         href: pages/contact.qmd
   page-footer:
     center: |
-      © 2026 Perils. All rights reserved.
+      &copy; 2026 Perils. All rights reserved.
     right:
       - icon: github
         href: https://github.com/shrutirkashyap/perils

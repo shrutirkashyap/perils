@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Perils Database</title>
+<title>Perils Atlas – Perils</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,15 +67,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a2e72b71af42ebea85185b4bf20b2885.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8bc7ae17ed768624888fdd80b7f18e3c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,6 +106,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="assets/styles.css">
 </head>
@@ -119,8 +147,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./assets/logo.svg" alt="" class="navbar-logo light-content">
-    <img src="./assets/logo.svg" alt="" class="navbar-logo dark-content">
+    <img src="./assets/logo.svg" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Perils</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -132,6 +162,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li class="nav-item">
     <a class="nav-link" href="./pages/about.html"> 
 <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./pages/methodology.html"> 
+<span class="menu-text">Methodology</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./pages/contact.html"> 
@@ -154,7 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Perils Database</h1>
+<h1 class="title">Perils Atlas</h1>
 </div>
 
 
@@ -172,18 +206,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div class="hero">
-<div class="hero-inner">
+<section id="ecological-jurisprudence-atlas" class="level1 hero-inner">
+<h1>Ecological Jurisprudence Atlas</h1>
 <div class="hero-subtitle">
-<p>Real-time tracking of environmental risks across the world.</p>
+<p>Explore 673 geocoded initiatives across ecological jurisprudence, rights of nature, personhood, indigenous models, animal rights, and eco-governance.</p>
 </div>
-</div>
+</section>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="19" data-source-offset="-36"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 18;"><span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"data/environmental_risks.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">// Get unique values for filters</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>regions <span class="op">=</span> [<span class="st">"All Regions"</span><span class="op">,</span> <span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">region</span>))]</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>riskTypes <span class="op">=</span> [<span class="st">"All Types"</span><span class="op">,</span> <span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(data<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">risk_type</span>))]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="20" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 19;"><span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>records <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"data/02_cleaned/ejm_records.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>jurisprudenceTypes <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"data/02_cleaned/ejm_jurisprudence_types.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>actorTypes <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"data/02_cleaned/ejm_actor_types.csv"</span>)<span class="op">.</span><span class="fu">csv</span>({ <span class="dt">typed</span><span class="op">:</span> <span class="kw">true</span> })</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>summary <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"data/02_cleaned/ejm_summary.json"</span>)<span class="op">.</span><span class="fu">json</span>()</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>regions <span class="op">=</span> [<span class="st">"All Regions"</span><span class="op">,</span> <span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(records<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">region</span>)<span class="op">.</span><span class="fu">filter</span>(<span class="bu">Boolean</span>))]</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>legalProvisions <span class="op">=</span> [<span class="st">"All Legal Provisions"</span><span class="op">,</span> <span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(records<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">legal_provision</span>)<span class="op">.</span><span class="fu">filter</span>(<span class="bu">Boolean</span>))]</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>statusOptions <span class="op">=</span> [<span class="st">"All Statuses"</span><span class="op">,</span> <span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(records<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">status_current</span>)<span class="op">.</span><span class="fu">filter</span>(<span class="bu">Boolean</span>))]</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>jurisprudenceOptions <span class="op">=</span> [<span class="st">"All Jurisprudence Types"</span><span class="op">,</span> <span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(jurisprudenceTypes<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">jurisprudence_type</span>)<span class="op">.</span><span class="fu">filter</span>(<span class="bu">Boolean</span>))]</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>actorTypeOptions <span class="op">=</span> [<span class="st">"All Actor Types"</span><span class="op">,</span> <span class="op">...</span><span class="kw">new</span> <span class="bu">Set</span>(actorTypes<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">actor_type</span>)<span class="op">.</span><span class="fu">filter</span>(<span class="bu">Boolean</span>))]</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>yearExtent <span class="op">=</span> d3<span class="op">.</span><span class="fu">extent</span>(records<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">year_initiated</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>themeOptions <span class="op">=</span> [</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">label</span><span class="op">:</span> <span class="st">"Rights of Nature"</span><span class="op">,</span> <span class="dt">column</span><span class="op">:</span> <span class="st">"ron"</span> }<span class="op">,</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">label</span><span class="op">:</span> <span class="st">"Personhood"</span><span class="op">,</span> <span class="dt">column</span><span class="op">:</span> <span class="st">"personhood"</span> }<span class="op">,</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">label</span><span class="op">:</span> <span class="st">"Animal Rights"</span><span class="op">,</span> <span class="dt">column</span><span class="op">:</span> <span class="st">"animal_rights"</span> }<span class="op">,</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">label</span><span class="op">:</span> <span class="st">"Local Eco Knowledge"</span><span class="op">,</span> <span class="dt">column</span><span class="op">:</span> <span class="st">"lek"</span> }<span class="op">,</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">label</span><span class="op">:</span> <span class="st">"Indigenous Framing"</span><span class="op">,</span> <span class="dt">column</span><span class="op">:</span> <span class="st">"indigenous_framing"</span> }<span class="op">,</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  { <span class="dt">label</span><span class="op">:</span> <span class="st">"Eco-Governance"</span><span class="op">,</span> <span class="dt">column</span><span class="op">:</span> <span class="st">"eco_gov"</span> }</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>legalProvisionColors <span class="op">=</span> <span class="kw">new</span> <span class="bu">Map</span>([</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"Legislation"</span><span class="op">,</span> <span class="st">"#b45309"</span>]<span class="op">,</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"Court Case"</span><span class="op">,</span> <span class="st">"#0f766e"</span>]<span class="op">,</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"Declaration"</span><span class="op">,</span> <span class="st">"#7c3aed"</span>]<span class="op">,</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"Civil Society Declaration"</span><span class="op">,</span> <span class="st">"#dc2626"</span>]<span class="op">,</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"Constitution"</span><span class="op">,</span> <span class="st">"#1d4ed8"</span>]<span class="op">,</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"Indigenous Declaration"</span><span class="op">,</span> <span class="st">"#059669"</span>]<span class="op">,</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"Indigenous Law"</span><span class="op">,</span> <span class="st">"#0891b2"</span>]<span class="op">,</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"Policy"</span><span class="op">,</span> <span class="st">"#334155"</span>]<span class="op">,</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"Civil Society Tribunal"</span><span class="op">,</span> <span class="st">"#be185d"</span>]<span class="op">,</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"Position Statement"</span><span class="op">,</span> <span class="st">"#9333ea"</span>]<span class="op">,</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  [<span class="st">"Private Sector Governance"</span><span class="op">,</span> <span class="st">"#4f46e5"</span>]</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -205,31 +270,124 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-8" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-9" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-10" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-11" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-12" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">🌍 Map View</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">📊 Analytics</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">📋 Data Table</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Map View</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Analytics</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Data Table</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="grid">
-<div class="g-col-12 g-col-md-3">
+<div class="g-col-12 g-col-md-4">
 <section id="filters" class="level3 filter-section">
 <h3 class="anchored" data-anchor-id="filters">Filters</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="38" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 37;"><span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>viewof selectedRegion <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(regions<span class="op">,</span> {</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Region"</span><span class="op">,</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"All Regions"</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>viewof selectedRiskType <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(riskTypes<span class="op">,</span> {</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Risk Type"</span><span class="op">,</span></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"All Types"</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>viewof minRiskScore <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="dv">0</span><span class="op">,</span> <span class="dv">10</span>]<span class="op">,</span> {</span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Minimum Risk Score"</span><span class="op">,</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>  <span class="dt">step</span><span class="op">:</span> <span class="fl">0.5</span></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="69" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 68;"><span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>viewof searchQuery <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">text</span>({</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Search"</span><span class="op">,</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>  <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Title, country, location, actor"</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>viewof selectedRegion <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(regions<span class="op">,</span> {</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Region"</span><span class="op">,</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"All Regions"</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>viewof selectedLegalProvision <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(legalProvisions<span class="op">,</span> {</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Legal Provision"</span><span class="op">,</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"All Legal Provisions"</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>viewof selectedStatus <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(statusOptions<span class="op">,</span> {</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Current Status"</span><span class="op">,</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"All Statuses"</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>viewof selectedJurisprudenceType <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(jurisprudenceOptions<span class="op">,</span> {</span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Jurisprudence Type"</span><span class="op">,</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"All Jurisprudence Types"</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>viewof selectedActorType <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">select</span>(actorTypeOptions<span class="op">,</span> {</span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Initiating Actor Type"</span><span class="op">,</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> <span class="st">"All Actor Types"</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>viewof selectedThemes <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">checkbox</span>(themeOptions<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">label</span>)<span class="op">,</span> {</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Theme Flags"</span></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>viewof minYear <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(yearExtent<span class="op">,</span> {</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"From Year"</span><span class="op">,</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> yearExtent[<span class="dv">0</span>]<span class="op">,</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>  <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>viewof maxYear <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>(yearExtent<span class="op">,</span> {</span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"To Year"</span><span class="op">,</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>  <span class="dt">value</span><span class="op">:</span> yearExtent[<span class="dv">1</span>]<span class="op">,</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>  <span class="dt">step</span><span class="op">:</span> <span class="dv">1</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-1" data-nodetype="declaration">
@@ -251,42 +409,229 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</div>
-</section>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="57" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 56;"><span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="co">// Filter data based on user selections</span></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>filteredData <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> {</span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> regionMatch <span class="op">=</span> selectedRegion <span class="op">===</span> <span class="st">"All Regions"</span> <span class="op">||</span> d<span class="op">.</span><span class="at">region</span> <span class="op">===</span> selectedRegion</span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> riskMatch <span class="op">=</span> selectedRiskType <span class="op">===</span> <span class="st">"All Types"</span> <span class="op">||</span> d<span class="op">.</span><span class="at">risk_type</span> <span class="op">===</span> selectedRiskType</span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> scoreMatch <span class="op">=</span> d<span class="op">.</span><span class="at">risk_score</span> <span class="op">&gt;=</span> minRiskScore</span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> regionMatch <span class="op">&amp;&amp;</span> riskMatch <span class="op">&amp;&amp;</span> scoreMatch</span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div id="ojs-cell-3" data-nodetype="declaration">
+<div>
+<div id="ojs-cell-2-4" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
-<div class="kpi-grid">
-<section id="filtereddata.length" class="level3 stat-card" style="background: linear-gradient(135deg, #e74c3c, #c0392b);">
-<h3 class="anchored" data-anchor-id="filtereddata.length"><span><span id="ojs-element-id-1"></span></span></h3>
-<p>Total Risk Events</p>
-</section>
-<section id="d3.format.1fd3.meanfiltereddata-d-d.risk_score" class="level3 stat-card" style="background: linear-gradient(135deg, #f39c12, #d68910);">
-<h3 class="anchored" data-anchor-id="d3.format.1fd3.meanfiltereddata-d-d.risk_score"><span><span id="ojs-element-id-2"></span></span></h3>
-<p>Average Risk Score</p>
-</section>
-<section id="d3.format.2sd3.sumfiltereddata-d-d.population_affected" class="level3 stat-card" style="background: linear-gradient(135deg, #27ae60, #229954);">
-<h3 class="anchored" data-anchor-id="d3.format.2sd3.sumfiltereddata-d-d.population_affected"><span><span id="ojs-element-id-3"></span></span></h3>
-<p>People Affected</p>
-</section>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-5" data-nodetype="declaration">
+
 </div>
 </div>
-<section id="world-map" class="level3 g-col-12 g-col-md-9">
-<h3 class="anchored" data-anchor-id="world-map">World Map</h3>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-8" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-9" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="91" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 90;"><span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="co">// Leaflet CSS</span></span>
-<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/&gt;`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="118" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 117;"><span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>normalizedSearch <span class="op">=</span> (searchQuery <span class="op">??</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">trim</span>()<span class="op">.</span><span class="fu">toLowerCase</span>()</span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a>lowerYear <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(minYear<span class="op">,</span> maxYear)</span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a>upperYear <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">max</span>(minYear<span class="op">,</span> maxYear)</span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a>selectedThemeColumns <span class="op">=</span> themeOptions</span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> selectedThemes<span class="op">.</span><span class="fu">includes</span>(d<span class="op">.</span><span class="at">label</span>))</span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">column</span>)</span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a>filteredData <span class="op">=</span> records<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> {</span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> textBlob <span class="op">=</span> [</span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>    d<span class="op">.</span><span class="at">title</span><span class="op">,</span></span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a>    d<span class="op">.</span><span class="at">country_name</span><span class="op">,</span></span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>    d<span class="op">.</span><span class="at">location</span><span class="op">,</span></span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>    d<span class="op">.</span><span class="at">initiating_actor_name</span><span class="op">,</span></span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a>    d<span class="op">.</span><span class="at">ecological_actor_name</span><span class="op">,</span></span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>    d<span class="op">.</span><span class="at">jurisprudence_types</span></span>
+<span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">.</span><span class="fu">join</span>(<span class="st">" "</span>)<span class="op">.</span><span class="fu">toLowerCase</span>()</span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> regionMatch <span class="op">=</span> selectedRegion <span class="op">===</span> <span class="st">"All Regions"</span> <span class="op">||</span> d<span class="op">.</span><span class="at">region</span> <span class="op">===</span> selectedRegion</span>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> legalProvisionMatch <span class="op">=</span> selectedLegalProvision <span class="op">===</span> <span class="st">"All Legal Provisions"</span> <span class="op">||</span> d<span class="op">.</span><span class="at">legal_provision</span> <span class="op">===</span> selectedLegalProvision</span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> statusMatch <span class="op">=</span> selectedStatus <span class="op">===</span> <span class="st">"All Statuses"</span> <span class="op">||</span> d<span class="op">.</span><span class="at">status_current</span> <span class="op">===</span> selectedStatus</span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> yearMatch <span class="op">=</span> (<span class="op">!</span>d<span class="op">.</span><span class="at">year_initiated</span> <span class="op">||</span> (d<span class="op">.</span><span class="at">year_initiated</span> <span class="op">&gt;=</span> lowerYear <span class="op">&amp;&amp;</span> d<span class="op">.</span><span class="at">year_initiated</span> <span class="op">&lt;=</span> upperYear))</span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> searchMatch <span class="op">=</span> <span class="op">!</span>normalizedSearch <span class="op">||</span> textBlob<span class="op">.</span><span class="fu">includes</span>(normalizedSearch)</span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> jurisprudenceList <span class="op">=</span> d<span class="op">.</span><span class="at">jurisprudence_types</span> <span class="op">?</span> d<span class="op">.</span><span class="at">jurisprudence_types</span><span class="op">.</span><span class="fu">split</span>(<span class="st">" | "</span>) <span class="op">:</span> []</span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> actorTypeList <span class="op">=</span> d<span class="op">.</span><span class="at">initiating_actor_types</span> <span class="op">?</span> d<span class="op">.</span><span class="at">initiating_actor_types</span><span class="op">.</span><span class="fu">split</span>(<span class="st">" | "</span>) <span class="op">:</span> []</span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> jurisprudenceMatch <span class="op">=</span> selectedJurisprudenceType <span class="op">===</span> <span class="st">"All Jurisprudence Types"</span> <span class="op">||</span> jurisprudenceList<span class="op">.</span><span class="fu">includes</span>(selectedJurisprudenceType)</span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> actorTypeMatch <span class="op">=</span> selectedActorType <span class="op">===</span> <span class="st">"All Actor Types"</span> <span class="op">||</span> actorTypeList<span class="op">.</span><span class="fu">includes</span>(selectedActorType)</span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> themeMatch <span class="op">=</span> selectedThemeColumns<span class="op">.</span><span class="fu">every</span>(column <span class="kw">=&gt;</span> d[column] <span class="op">===</span> <span class="dv">1</span>)</span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> regionMatch <span class="op">&amp;&amp;</span> legalProvisionMatch <span class="op">&amp;&amp;</span> statusMatch <span class="op">&amp;&amp;</span> yearMatch <span class="op">&amp;&amp;</span> searchMatch <span class="op">&amp;&amp;</span> jurisprudenceMatch <span class="op">&amp;&amp;</span> actorTypeMatch <span class="op">&amp;&amp;</span> themeMatch</span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a>filteredIds <span class="op">=</span> <span class="kw">new</span> <span class="bu">Set</span>(filteredData<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">record_id</span>))</span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a>filteredJurisprudence <span class="op">=</span> jurisprudenceTypes<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> filteredIds<span class="op">.</span><span class="fu">has</span>(d<span class="op">.</span><span class="at">record_id</span>))</span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a>filteredActorTypes <span class="op">=</span> actorTypes<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> filteredIds<span class="op">.</span><span class="fu">has</span>(d<span class="op">.</span><span class="at">record_id</span>))</span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a>countryCount <span class="op">=</span> <span class="kw">new</span> <span class="bu">Set</span>(filteredData<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">country_name</span>)<span class="op">.</span><span class="fu">filter</span>(<span class="bu">Boolean</span>))<span class="op">.</span><span class="at">size</span></span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a>ronCount <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(filteredData<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">ron</span>)</span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a>indigenousCount <span class="op">=</span> d3<span class="op">.</span><span class="fu">sum</span>(filteredData<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">indigenous_framing</span> <span class="op">||</span> d<span class="op">.</span><span class="at">actor_indigenous</span>)</span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a>minFilteredYear <span class="op">=</span> d3<span class="op">.</span><span class="fu">min</span>(filteredData<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">year_initiated</span>)</span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a>maxFilteredYear <span class="op">=</span> d3<span class="op">.</span><span class="fu">max</span>(filteredData<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">year_initiated</span>)</span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a>yearLabel <span class="op">=</span> filteredData<span class="op">.</span><span class="at">length</span> <span class="op">?</span> <span class="vs">`</span><span class="sc">${</span>minFilteredYear<span class="sc">}</span><span class="vs">-</span><span class="sc">${</span>maxFilteredYear<span class="sc">}</span><span class="vs">`</span> <span class="op">:</span> <span class="st">"No data"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-7" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-8" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-9" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-10" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-11" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-12" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-13" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-14" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="kpi-grid">
+<section id="filtereddata.length" class="level3 stat-card" style="background: linear-gradient(135deg, #1d4ed8, #1e3a8a); color: white;">
+<h3 class="anchored" data-anchor-id="filtereddata.length"><span><span id="ojs-element-id-1"></span></span></h3>
+<p>Initiatives in view</p>
+</section>
+<section id="countrycount" class="level3 stat-card" style="background: linear-gradient(135deg, #0f766e, #134e4a); color: white;">
+<h3 class="anchored" data-anchor-id="countrycount"><span><span id="ojs-element-id-2"></span></span></h3>
+<p>Countries represented</p>
+</section>
+<section id="yearlabel" class="level3 stat-card" style="background: linear-gradient(135deg, #7c3aed, #581c87); color: white;">
+<h3 class="anchored" data-anchor-id="yearlabel"><span><span id="ojs-element-id-3"></span></span></h3>
+<p>Initiation span</p>
+</section>
+<section id="roncount" class="level3 stat-card" style="background: linear-gradient(135deg, #b45309, #78350f); color: white;">
+<h3 class="anchored" data-anchor-id="roncount"><span><span id="ojs-element-id-4"></span></span></h3>
+<p>Tagged Rights of Nature</p>
+</section>
+<section id="indigenouscount" class="level3 stat-card" style="background: linear-gradient(135deg, #059669, #064e3b); color: white;">
+<h3 class="anchored" data-anchor-id="indigenouscount"><span><span id="ojs-element-id-5"></span></span></h3>
+<p>Indigenous-linked records</p>
+</section>
+</div>
+<div class="detail-card">
+<p><strong>Dataset snapshot</strong></p>
+<ul>
+<li><span><span id="ojs-element-id-6"></span></span> total records in the current atlas</li>
+<li><span><span id="ojs-element-id-7"></span></span> countries represented</li>
+<li><span class="math inline">\({summary.min_year}-\)</span>{summary.max_year} temporal coverage</li>
+<li>Prepared for comparative legal and ecological analysis</li>
+</ul>
+</div>
+</div>
+<section id="global-initiative-map" class="level3 g-col-12 g-col-md-8">
+<h3 class="anchored" data-anchor-id="global-initiative-map">Global initiative map</h3>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="207" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 206;"><span id="cb4-207"><a href="#cb4-207" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="expression">
 
@@ -294,7 +639,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="97" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 96;"><span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a>leaflet <span class="op">=</span> <span class="pp">require</span>(<span class="st">"leaflet@1.9.4"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="212" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 211;"><span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a>leaflet <span class="op">=</span> <span class="pp">require</span>(<span class="st">"leaflet@1.9.4"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-5" data-nodetype="declaration">
 
@@ -302,54 +647,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb6" data-startfrom="102" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 101;"><span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a>mapDisplay <span class="op">=</span> {</span>
-<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div class="map-container"&gt;&lt;div class="map-inner"&gt;&lt;/div&gt;&lt;/div&gt;`</span></span>
-<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a>  <span class="kw">yield</span> container</span>
-<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Initialize map on the inner element</span></span>
-<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> map <span class="op">=</span> leaflet<span class="op">.</span><span class="fu">map</span>(container<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">".map-inner"</span>))<span class="op">.</span><span class="fu">setView</span>([<span class="dv">20</span><span class="op">,</span> <span class="dv">0</span>]<span class="op">,</span> <span class="dv">2</span>)</span>
-<span id="cb6-108"><a href="#cb6-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-109"><a href="#cb6-109" aria-hidden="true" tabindex="-1"></a>  leaflet<span class="op">.</span><span class="fu">tileLayer</span>(<span class="st">"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"</span><span class="op">,</span> {</span>
-<span id="cb6-110"><a href="#cb6-110" aria-hidden="true" tabindex="-1"></a>    <span class="dt">attribution</span><span class="op">:</span> <span class="st">"© OpenStreetMap contributors"</span><span class="op">,</span></span>
-<span id="cb6-111"><a href="#cb6-111" aria-hidden="true" tabindex="-1"></a>    <span class="dt">maxZoom</span><span class="op">:</span> <span class="dv">18</span></span>
-<span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a>  })<span class="op">.</span><span class="fu">addTo</span>(map)</span>
-<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> colors <span class="op">=</span> {</span>
-<span id="cb6-115"><a href="#cb6-115" aria-hidden="true" tabindex="-1"></a>    <span class="dt">Flood</span><span class="op">:</span> <span class="st">"#3498db"</span><span class="op">,</span></span>
-<span id="cb6-116"><a href="#cb6-116" aria-hidden="true" tabindex="-1"></a>    <span class="dt">Drought</span><span class="op">:</span> <span class="st">"#f39c12"</span><span class="op">,</span></span>
-<span id="cb6-117"><a href="#cb6-117" aria-hidden="true" tabindex="-1"></a>    <span class="dt">Wildfire</span><span class="op">:</span> <span class="st">"#e74c3c"</span><span class="op">,</span></span>
-<span id="cb6-118"><a href="#cb6-118" aria-hidden="true" tabindex="-1"></a>    <span class="dt">Storm</span><span class="op">:</span> <span class="st">"#9b59b6"</span></span>
-<span id="cb6-119"><a href="#cb6-119" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb6-120"><a href="#cb6-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-121"><a href="#cb6-121" aria-hidden="true" tabindex="-1"></a>  filteredData<span class="op">.</span><span class="fu">forEach</span>(d <span class="kw">=&gt;</span> {</span>
-<span id="cb6-122"><a href="#cb6-122" aria-hidden="true" tabindex="-1"></a>    leaflet<span class="op">.</span><span class="fu">circleMarker</span>([d<span class="op">.</span><span class="at">lat</span><span class="op">,</span> d<span class="op">.</span><span class="at">lon</span>]<span class="op">,</span> {</span>
-<span id="cb6-123"><a href="#cb6-123" aria-hidden="true" tabindex="-1"></a>      <span class="dt">radius</span><span class="op">:</span> d<span class="op">.</span><span class="at">risk_score</span> <span class="op">*</span> <span class="fl">2.5</span><span class="op">,</span></span>
-<span id="cb6-124"><a href="#cb6-124" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fillColor</span><span class="op">:</span> colors[d<span class="op">.</span><span class="at">risk_type</span>] <span class="op">??</span> <span class="st">"#64748b"</span><span class="op">,</span></span>
-<span id="cb6-125"><a href="#cb6-125" aria-hidden="true" tabindex="-1"></a>      <span class="dt">color</span><span class="op">:</span> <span class="st">"#fff"</span><span class="op">,</span></span>
-<span id="cb6-126"><a href="#cb6-126" aria-hidden="true" tabindex="-1"></a>      <span class="dt">weight</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
-<span id="cb6-127"><a href="#cb6-127" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fillOpacity</span><span class="op">:</span> <span class="fl">0.7</span></span>
-<span id="cb6-128"><a href="#cb6-128" aria-hidden="true" tabindex="-1"></a>    })</span>
-<span id="cb6-129"><a href="#cb6-129" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">bindPopup</span>(<span class="vs">`</span></span>
-<span id="cb6-130"><a href="#cb6-130" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;b&gt;</span><span class="sc">${</span>d<span class="op">.</span><span class="at">country</span><span class="sc">}</span><span class="vs">&lt;/b&gt;&lt;br&gt;</span></span>
-<span id="cb6-131"><a href="#cb6-131" aria-hidden="true" tabindex="-1"></a><span class="vs">        Type: </span><span class="sc">${</span>d<span class="op">.</span><span class="at">risk_type</span><span class="sc">}</span><span class="vs">&lt;br&gt;</span></span>
-<span id="cb6-132"><a href="#cb6-132" aria-hidden="true" tabindex="-1"></a><span class="vs">        Score: </span><span class="sc">${</span>d<span class="op">.</span><span class="at">risk_score</span><span class="sc">}</span><span class="vs">/10&lt;br&gt;</span></span>
-<span id="cb6-133"><a href="#cb6-133" aria-hidden="true" tabindex="-1"></a><span class="vs">        Affected: </span><span class="sc">${</span>d3<span class="op">.</span><span class="fu">format</span>(<span class="st">","</span>)(d<span class="op">.</span><span class="at">population_affected</span>)<span class="sc">}</span></span>
-<span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a><span class="vs">      `</span>)</span>
-<span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a>      <span class="op">.</span><span class="fu">addTo</span>(map)</span>
-<span id="cb6-136"><a href="#cb6-136" aria-hidden="true" tabindex="-1"></a>  })</span>
-<span id="cb6-137"><a href="#cb6-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a>  <span class="pp">setTimeout</span>(() <span class="kw">=&gt;</span> map<span class="op">.</span><span class="fu">invalidateSize</span>()<span class="op">,</span> <span class="dv">100</span>)</span>
-<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="217" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 216;"><span id="cb6-217"><a href="#cb6-217" aria-hidden="true" tabindex="-1"></a>mapDisplay <span class="op">=</span> {</span>
+<span id="cb6-218"><a href="#cb6-218" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> <span class="fu">html</span><span class="vs">`&lt;div class="map-container"&gt;&lt;div class="map-inner"&gt;&lt;/div&gt;&lt;/div&gt;`</span></span>
+<span id="cb6-219"><a href="#cb6-219" aria-hidden="true" tabindex="-1"></a>  <span class="kw">yield</span> container</span>
+<span id="cb6-220"><a href="#cb6-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-221"><a href="#cb6-221" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> map <span class="op">=</span> leaflet<span class="op">.</span><span class="fu">map</span>(container<span class="op">.</span><span class="fu">querySelector</span>(<span class="st">".map-inner"</span>)<span class="op">,</span> {</span>
+<span id="cb6-222"><a href="#cb6-222" aria-hidden="true" tabindex="-1"></a>    <span class="dt">worldCopyJump</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb6-223"><a href="#cb6-223" aria-hidden="true" tabindex="-1"></a>    <span class="dt">scrollWheelZoom</span><span class="op">:</span> <span class="kw">false</span></span>
+<span id="cb6-224"><a href="#cb6-224" aria-hidden="true" tabindex="-1"></a>  })<span class="op">.</span><span class="fu">setView</span>([<span class="dv">15</span><span class="op">,</span> <span class="op">-</span><span class="dv">10</span>]<span class="op">,</span> <span class="dv">2</span>)</span>
+<span id="cb6-225"><a href="#cb6-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-226"><a href="#cb6-226" aria-hidden="true" tabindex="-1"></a>  leaflet<span class="op">.</span><span class="fu">tileLayer</span>(<span class="st">"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"</span><span class="op">,</span> {</span>
+<span id="cb6-227"><a href="#cb6-227" aria-hidden="true" tabindex="-1"></a>    <span class="dt">attribution</span><span class="op">:</span> <span class="st">"&amp;copy; OpenStreetMap contributors"</span><span class="op">,</span></span>
+<span id="cb6-228"><a href="#cb6-228" aria-hidden="true" tabindex="-1"></a>    <span class="dt">maxZoom</span><span class="op">:</span> <span class="dv">18</span></span>
+<span id="cb6-229"><a href="#cb6-229" aria-hidden="true" tabindex="-1"></a>  })<span class="op">.</span><span class="fu">addTo</span>(map)</span>
+<span id="cb6-230"><a href="#cb6-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-231"><a href="#cb6-231" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> markers <span class="op">=</span> []</span>
+<span id="cb6-232"><a href="#cb6-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-233"><a href="#cb6-233" aria-hidden="true" tabindex="-1"></a>  filteredData<span class="op">.</span><span class="fu">forEach</span>(d <span class="kw">=&gt;</span> {</span>
+<span id="cb6-234"><a href="#cb6-234" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (d<span class="op">.</span><span class="at">lat</span> <span class="op">==</span> <span class="kw">null</span> <span class="op">||</span> d<span class="op">.</span><span class="at">lon</span> <span class="op">==</span> <span class="kw">null</span> <span class="op">||</span> d<span class="op">.</span><span class="at">lat</span> <span class="op">===</span> <span class="st">""</span> <span class="op">||</span> d<span class="op">.</span><span class="at">lon</span> <span class="op">===</span> <span class="st">""</span>) <span class="cf">return</span></span>
+<span id="cb6-235"><a href="#cb6-235" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> fillColor <span class="op">=</span> legalProvisionColors<span class="op">.</span><span class="fu">get</span>(d<span class="op">.</span><span class="at">legal_provision</span>) <span class="op">??</span> <span class="st">"#64748b"</span></span>
+<span id="cb6-236"><a href="#cb6-236" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> marker <span class="op">=</span> leaflet<span class="op">.</span><span class="fu">circleMarker</span>([d<span class="op">.</span><span class="at">lat</span><span class="op">,</span> d<span class="op">.</span><span class="at">lon</span>]<span class="op">,</span> {</span>
+<span id="cb6-237"><a href="#cb6-237" aria-hidden="true" tabindex="-1"></a>      <span class="dt">radius</span><span class="op">:</span> <span class="dv">6</span><span class="op">,</span></span>
+<span id="cb6-238"><a href="#cb6-238" aria-hidden="true" tabindex="-1"></a>      fillColor<span class="op">,</span></span>
+<span id="cb6-239"><a href="#cb6-239" aria-hidden="true" tabindex="-1"></a>      <span class="dt">color</span><span class="op">:</span> <span class="st">"#ffffff"</span><span class="op">,</span></span>
+<span id="cb6-240"><a href="#cb6-240" aria-hidden="true" tabindex="-1"></a>      <span class="dt">weight</span><span class="op">:</span> <span class="fl">1.5</span><span class="op">,</span></span>
+<span id="cb6-241"><a href="#cb6-241" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fillOpacity</span><span class="op">:</span> <span class="fl">0.82</span></span>
+<span id="cb6-242"><a href="#cb6-242" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb6-243"><a href="#cb6-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-244"><a href="#cb6-244" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">.</span><span class="fu">bindPopup</span>(<span class="vs">`</span></span>
+<span id="cb6-245"><a href="#cb6-245" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;div style="min-width: 240px;"&gt;</span></span>
+<span id="cb6-246"><a href="#cb6-246" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;strong&gt;</span><span class="sc">${</span>d<span class="op">.</span><span class="at">title</span><span class="sc">}</span><span class="vs">&lt;/strong&gt;&lt;br&gt;</span></span>
+<span id="cb6-247"><a href="#cb6-247" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;span&gt;</span><span class="sc">${</span>d<span class="op">.</span><span class="at">country_name</span><span class="sc">}${</span>d<span class="op">.</span><span class="at">location</span> <span class="op">?</span> <span class="vs">`, </span><span class="sc">${</span>d<span class="op">.</span><span class="at">location</span><span class="sc">}</span><span class="vs">`</span> <span class="op">:</span> <span class="st">""</span><span class="sc">}</span><span class="vs">&lt;/span&gt;&lt;br&gt;</span></span>
+<span id="cb6-248"><a href="#cb6-248" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;span&gt;</span><span class="sc">${</span>d<span class="op">.</span><span class="at">legal_provision</span><span class="sc">}</span><span class="vs"> | </span><span class="sc">${</span>d<span class="op">.</span><span class="at">status_current</span><span class="sc">}</span><span class="vs">&lt;/span&gt;&lt;br&gt;</span></span>
+<span id="cb6-249"><a href="#cb6-249" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;span&gt;Initiated: </span><span class="sc">${</span>d<span class="op">.</span><span class="at">year_initiated</span> <span class="op">||</span> <span class="st">"Unspecified"</span><span class="sc">}</span><span class="vs">&lt;/span&gt;&lt;br&gt;</span></span>
+<span id="cb6-250"><a href="#cb6-250" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;span&gt;</span><span class="sc">${</span>d<span class="op">.</span><span class="at">jurisprudence_types</span> <span class="op">||</span> <span class="st">"Unspecified"</span><span class="sc">}</span><span class="vs">&lt;/span&gt;&lt;br&gt;</span></span>
+<span id="cb6-251"><a href="#cb6-251" aria-hidden="true" tabindex="-1"></a><span class="vs">        &lt;a href="</span><span class="sc">${</span>d<span class="op">.</span><span class="at">permalink</span><span class="sc">}</span><span class="vs">" target="_blank" rel="noopener noreferrer"&gt;Open source record&lt;/a&gt;</span></span>
+<span id="cb6-252"><a href="#cb6-252" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;/div&gt;</span></span>
+<span id="cb6-253"><a href="#cb6-253" aria-hidden="true" tabindex="-1"></a><span class="vs">    `</span>)</span>
+<span id="cb6-254"><a href="#cb6-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-255"><a href="#cb6-255" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">.</span><span class="fu">addTo</span>(map)</span>
+<span id="cb6-256"><a href="#cb6-256" aria-hidden="true" tabindex="-1"></a>    markers<span class="op">.</span><span class="fu">push</span>(marker)</span>
+<span id="cb6-257"><a href="#cb6-257" aria-hidden="true" tabindex="-1"></a>  })</span>
+<span id="cb6-258"><a href="#cb6-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-259"><a href="#cb6-259" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (markers<span class="op">.</span><span class="at">length</span>) {</span>
+<span id="cb6-260"><a href="#cb6-260" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> group <span class="op">=</span> leaflet<span class="op">.</span><span class="fu">featureGroup</span>(markers)</span>
+<span id="cb6-261"><a href="#cb6-261" aria-hidden="true" tabindex="-1"></a>    map<span class="op">.</span><span class="fu">fitBounds</span>(group<span class="op">.</span><span class="fu">getBounds</span>()<span class="op">.</span><span class="fu">pad</span>(<span class="fl">0.15</span>))</span>
+<span id="cb6-262"><a href="#cb6-262" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-263"><a href="#cb6-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-264"><a href="#cb6-264" aria-hidden="true" tabindex="-1"></a>  <span class="pp">setTimeout</span>(() <span class="kw">=&gt;</span> map<span class="op">.</span><span class="fu">invalidateSize</span>()<span class="op">,</span> <span class="dv">100</span>)</span>
+<span id="cb6-265"><a href="#cb6-265" aria-hidden="true" tabindex="-1"></a>  invalidation<span class="op">.</span><span class="fu">then</span>(() <span class="kw">=&gt;</span> map<span class="op">.</span><span class="fu">remove</span>())</span>
+<span id="cb6-266"><a href="#cb6-266" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-6" data-nodetype="declaration">
 
 </div>
 </div>
 </div>
-<section id="legend" class="level4">
-<h4 class="anchored" data-anchor-id="legend">Legend</h4>
-<div class="legend">
-<p><span class="legend-item">Flood</span> <span class="legend-item">Drought</span> <span class="legend-item">Wildfire</span> <span class="legend-item">Storm</span></p>
+<section id="legal-provision-legend" class="level4">
+<h4 class="anchored" data-anchor-id="legal-provision-legend">Legal provision legend</h4>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="274" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 273;"><span id="cb7-274"><a href="#cb7-274" aria-hidden="true" tabindex="-1"></a>legendItems <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>(legalProvisionColors<span class="op">.</span><span class="fu">entries</span>())</span>
+<span id="cb7-275"><a href="#cb7-275" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filter</span>(([name]) <span class="kw">=&gt;</span> filteredData<span class="op">.</span><span class="fu">some</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">legal_provision</span> <span class="op">===</span> name))</span>
+<span id="cb7-276"><a href="#cb7-276" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">8</span>)</span>
+<span id="cb7-277"><a href="#cb7-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-278"><a href="#cb7-278" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="legend"&gt;</span><span class="sc">${</span>legendItems<span class="op">.</span><span class="fu">map</span>(([name<span class="op">,</span> color]) <span class="kw">=&gt;</span> <span class="fu">html</span><span class="vs">`&lt;span class="legend-item"&gt;&lt;span class="legend-dot" style="background:</span><span class="sc">${</span>color<span class="sc">}</span><span class="vs">"&gt;&lt;/span&gt;</span><span class="sc">${</span>name<span class="sc">}</span><span class="vs">&lt;/span&gt;`</span>)<span class="sc">}</span><span class="vs">&lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-7-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-7-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<div class="detail-card">
+<p>Map markers are colored by legal provision type. Use the filters to narrow by region, year, jurisprudence type, actor type, or theme flags.</p>
 </div>
 </section>
 </section>
@@ -357,49 +735,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="grid">
-<section id="risk-distribution-by-type" class="level3 g-col-12 g-col-md-6">
-<h3 class="anchored" data-anchor-id="risk-distribution-by-type">Risk Distribution by Type</h3>
+<section id="initiatives-by-region" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="initiatives-by-region">Initiatives by region</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb7" data-startfrom="162" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 161;"><span id="cb7-162"><a href="#cb7-162" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
-<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
-<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Risk Type"</span> }<span class="op">,</span></span>
-<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Count"</span> }<span class="op">,</span></span>
-<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span>(</span>
-<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a>      filteredData<span class="op">,</span></span>
-<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">groupX</span>({ <span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span> }<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"risk_type"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"risk_type"</span><span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span> })</span>
-<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
-<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])</span>
-<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
-<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> [<span class="st">"Flood"</span><span class="op">,</span> <span class="st">"Drought"</span><span class="op">,</span> <span class="st">"Wildfire"</span><span class="op">,</span> <span class="st">"Storm"</span>]<span class="op">,</span></span>
-<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>    <span class="dt">range</span><span class="op">:</span> [<span class="st">"#3498db"</span><span class="op">,</span> <span class="st">"#f39c12"</span><span class="op">,</span> <span class="st">"#e74c3c"</span><span class="op">,</span> <span class="st">"#9b59b6"</span>]</span>
-<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div id="ojs-cell-7" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-</section>
-<section id="average-risk-score-by-region" class="level3 g-col-12 g-col-md-6">
-<h3 class="anchored" data-anchor-id="average-risk-score-by-region">Average Risk Score by Region</h3>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb8" data-startfrom="186" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 185;"><span id="cb8-186"><a href="#cb8-186" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb8-187"><a href="#cb8-187" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span></span>
-<span id="cb8-188"><a href="#cb8-188" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
-<span id="cb8-189"><a href="#cb8-189" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Average Risk Score"</span> }<span class="op">,</span></span>
-<span id="cb8-190"><a href="#cb8-190" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Region"</span> }<span class="op">,</span></span>
-<span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb8-192"><a href="#cb8-192" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barX</span>(</span>
-<span id="cb8-193"><a href="#cb8-193" aria-hidden="true" tabindex="-1"></a>      filteredData<span class="op">,</span></span>
-<span id="cb8-194"><a href="#cb8-194" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">groupY</span>({ <span class="dt">x</span><span class="op">:</span> <span class="st">"mean"</span> }<span class="op">,</span> { <span class="dt">y</span><span class="op">:</span> <span class="st">"region"</span><span class="op">,</span> <span class="dt">x</span><span class="op">:</span> <span class="st">"risk_score"</span><span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span> })</span>
-<span id="cb8-195"><a href="#cb8-195" aria-hidden="true" tabindex="-1"></a>    )<span class="op">,</span></span>
-<span id="cb8-196"><a href="#cb8-196" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])</span>
-<span id="cb8-197"><a href="#cb8-197" aria-hidden="true" tabindex="-1"></a>  ]</span>
-<span id="cb8-198"><a href="#cb8-198" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="296" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 295;"><span id="cb8-296"><a href="#cb8-296" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb8-297"><a href="#cb8-297" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span></span>
+<span id="cb8-298"><a href="#cb8-298" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span></span>
+<span id="cb8-299"><a href="#cb8-299" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span></span>
+<span id="cb8-300"><a href="#cb8-300" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Initiatives"</span> }<span class="op">,</span></span>
+<span id="cb8-301"><a href="#cb8-301" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">,</span></span>
+<span id="cb8-302"><a href="#cb8-302" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb8-303"><a href="#cb8-303" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barX</span>(filteredData<span class="op">,</span> Plot<span class="op">.</span><span class="fu">groupY</span>({ <span class="dt">x</span><span class="op">:</span> <span class="st">"count"</span> }<span class="op">,</span> { <span class="dt">y</span><span class="op">:</span> <span class="st">"region"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"region"</span><span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">sort</span><span class="op">:</span> { <span class="dt">y</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">reverse</span><span class="op">:</span> <span class="kw">true</span> } }))<span class="op">,</span></span>
+<span id="cb8-304"><a href="#cb8-304" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])</span>
+<span id="cb8-305"><a href="#cb8-305" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb8-306"><a href="#cb8-306" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-8" data-nodetype="expression">
 
@@ -407,35 +756,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="population-affected-by-country-top-15" class="level3 g-col-12">
-<h3 class="anchored" data-anchor-id="population-affected-by-country-top-15">Population Affected by Country (Top 15)</h3>
+<section id="top-legal-provision-types" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="top-legal-provision-types">Top legal provision types</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb9" data-startfrom="207" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 206;"><span id="cb9-207"><a href="#cb9-207" aria-hidden="true" tabindex="-1"></a>topCountries <span class="op">=</span> filteredData</span>
-<span id="cb9-208"><a href="#cb9-208" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">slice</span>()</span>
-<span id="cb9-209"><a href="#cb9-209" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">sort</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> b<span class="op">.</span><span class="at">population_affected</span> <span class="op">-</span> a<span class="op">.</span><span class="at">population_affected</span>)</span>
-<span id="cb9-210"><a href="#cb9-210" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">15</span>)</span>
-<span id="cb9-211"><a href="#cb9-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-212"><a href="#cb9-212" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
-<span id="cb9-213"><a href="#cb9-213" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span></span>
-<span id="cb9-214"><a href="#cb9-214" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
-<span id="cb9-215"><a href="#cb9-215" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
-<span id="cb9-216"><a href="#cb9-216" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Population Affected"</span><span class="op">,</span> <span class="dt">tickFormat</span><span class="op">:</span> <span class="st">"~s"</span> }<span class="op">,</span></span>
-<span id="cb9-217"><a href="#cb9-217" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Country"</span> }<span class="op">,</span></span>
-<span id="cb9-218"><a href="#cb9-218" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
-<span id="cb9-219"><a href="#cb9-219" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barX</span>(topCountries<span class="op">,</span> {</span>
-<span id="cb9-220"><a href="#cb9-220" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"population_affected"</span><span class="op">,</span></span>
-<span id="cb9-221"><a href="#cb9-221" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"country"</span><span class="op">,</span></span>
-<span id="cb9-222"><a href="#cb9-222" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"risk_type"</span><span class="op">,</span></span>
-<span id="cb9-223"><a href="#cb9-223" aria-hidden="true" tabindex="-1"></a>      <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb9-224"><a href="#cb9-224" aria-hidden="true" tabindex="-1"></a>      <span class="dt">sort</span><span class="op">:</span> { <span class="dt">y</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">reverse</span><span class="op">:</span> <span class="kw">true</span> }</span>
-<span id="cb9-225"><a href="#cb9-225" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
-<span id="cb9-226"><a href="#cb9-226" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])</span>
-<span id="cb9-227"><a href="#cb9-227" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
-<span id="cb9-228"><a href="#cb9-228" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {</span>
-<span id="cb9-229"><a href="#cb9-229" aria-hidden="true" tabindex="-1"></a>    <span class="dt">domain</span><span class="op">:</span> [<span class="st">"Flood"</span><span class="op">,</span> <span class="st">"Drought"</span><span class="op">,</span> <span class="st">"Wildfire"</span><span class="op">,</span> <span class="st">"Storm"</span>]<span class="op">,</span></span>
-<span id="cb9-230"><a href="#cb9-230" aria-hidden="true" tabindex="-1"></a>    <span class="dt">range</span><span class="op">:</span> [<span class="st">"#3498db"</span><span class="op">,</span> <span class="st">"#f39c12"</span><span class="op">,</span> <span class="st">"#e74c3c"</span><span class="op">,</span> <span class="st">"#9b59b6"</span>]</span>
-<span id="cb9-231"><a href="#cb9-231" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb9-232"><a href="#cb9-232" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code hidden" id="cb9" data-startfrom="315" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 314;"><span id="cb9-315"><a href="#cb9-315" aria-hidden="true" tabindex="-1"></a>topLegalProvisions <span class="op">=</span> d3<span class="op">.</span><span class="fu">rollups</span>(filteredData<span class="op">,</span> values <span class="kw">=&gt;</span> values<span class="op">.</span><span class="at">length</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">legal_provision</span>)</span>
+<span id="cb9-316"><a href="#cb9-316" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">sort</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> d3<span class="op">.</span><span class="fu">descending</span>(a[<span class="dv">1</span>]<span class="op">,</span> b[<span class="dv">1</span>]))</span>
+<span id="cb9-317"><a href="#cb9-317" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">8</span>)</span>
+<span id="cb9-318"><a href="#cb9-318" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">map</span>(([legal_provision<span class="op">,</span> count]) <span class="kw">=&gt;</span> ({ legal_provision<span class="op">,</span> count }))</span>
+<span id="cb9-319"><a href="#cb9-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-320"><a href="#cb9-320" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb9-321"><a href="#cb9-321" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">70</span><span class="op">,</span></span>
+<span id="cb9-322"><a href="#cb9-322" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">80</span><span class="op">,</span></span>
+<span id="cb9-323"><a href="#cb9-323" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span></span>
+<span id="cb9-324"><a href="#cb9-324" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span> <span class="dt">tickRotate</span><span class="op">:</span> <span class="op">-</span><span class="dv">25</span> }<span class="op">,</span></span>
+<span id="cb9-325"><a href="#cb9-325" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Records"</span> }<span class="op">,</span></span>
+<span id="cb9-326"><a href="#cb9-326" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> { <span class="dt">legend</span><span class="op">:</span> <span class="kw">false</span> }<span class="op">,</span></span>
+<span id="cb9-327"><a href="#cb9-327" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb9-328"><a href="#cb9-328" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span>(topLegalProvisions<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"legal_provision"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"legal_provision"</span><span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">,</span></span>
+<span id="cb9-329"><a href="#cb9-329" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])</span>
+<span id="cb9-330"><a href="#cb9-330" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb9-331"><a href="#cb9-331" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-9-1" data-nodetype="declaration">
@@ -452,32 +792,156 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
+<section id="initiatives-by-year-initiated" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="initiatives-by-year-initiated">Initiatives by year initiated</h3>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb10" data-startfrom="339" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 338;"><span id="cb10-339"><a href="#cb10-339" aria-hidden="true" tabindex="-1"></a>yearlyCounts <span class="op">=</span> d3<span class="op">.</span><span class="fu">rollups</span>(filteredData<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">year_initiated</span>)<span class="op">,</span> values <span class="kw">=&gt;</span> values<span class="op">.</span><span class="at">length</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">year_initiated</span>)</span>
+<span id="cb10-340"><a href="#cb10-340" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">sort</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> d3<span class="op">.</span><span class="fu">ascending</span>(a[<span class="dv">0</span>]<span class="op">,</span> b[<span class="dv">0</span>]))</span>
+<span id="cb10-341"><a href="#cb10-341" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">map</span>(([year_initiated<span class="op">,</span> count]) <span class="kw">=&gt;</span> ({ year_initiated<span class="op">,</span> count }))</span>
+<span id="cb10-342"><a href="#cb10-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-343"><a href="#cb10-343" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb10-344"><a href="#cb10-344" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">60</span><span class="op">,</span></span>
+<span id="cb10-345"><a href="#cb10-345" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></span>
+<span id="cb10-346"><a href="#cb10-346" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span></span>
+<span id="cb10-347"><a href="#cb10-347" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Year initiated"</span> }<span class="op">,</span></span>
+<span id="cb10-348"><a href="#cb10-348" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Records"</span> }<span class="op">,</span></span>
+<span id="cb10-349"><a href="#cb10-349" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb10-350"><a href="#cb10-350" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">areaY</span>(yearlyCounts<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"year_initiated"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#93c5fd"</span> })<span class="op">,</span></span>
+<span id="cb10-351"><a href="#cb10-351" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">lineY</span>(yearlyCounts<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"year_initiated"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#1d4ed8"</span> })<span class="op">,</span></span>
+<span id="cb10-352"><a href="#cb10-352" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(yearlyCounts<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"year_initiated"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#1d4ed8"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="fl">2.5</span><span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">,</span></span>
+<span id="cb10-353"><a href="#cb10-353" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])</span>
+<span id="cb10-354"><a href="#cb10-354" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb10-355"><a href="#cb10-355" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-10-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-10-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="top-jurisprudence-types" class="level3 g-col-12 g-col-md-6">
+<h3 class="anchored" data-anchor-id="top-jurisprudence-types">Top jurisprudence types</h3>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb11" data-startfrom="363" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 362;"><span id="cb11-363"><a href="#cb11-363" aria-hidden="true" tabindex="-1"></a>topJurisprudenceTypes <span class="op">=</span> d3<span class="op">.</span><span class="fu">rollups</span>(filteredJurisprudence<span class="op">,</span> values <span class="kw">=&gt;</span> values<span class="op">.</span><span class="at">length</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">jurisprudence_type</span>)</span>
+<span id="cb11-364"><a href="#cb11-364" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">sort</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> d3<span class="op">.</span><span class="fu">descending</span>(a[<span class="dv">1</span>]<span class="op">,</span> b[<span class="dv">1</span>]))</span>
+<span id="cb11-365"><a href="#cb11-365" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">10</span>)</span>
+<span id="cb11-366"><a href="#cb11-366" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">map</span>(([jurisprudence_type<span class="op">,</span> count]) <span class="kw">=&gt;</span> ({ jurisprudence_type<span class="op">,</span> count }))</span>
+<span id="cb11-367"><a href="#cb11-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-368"><a href="#cb11-368" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb11-369"><a href="#cb11-369" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">140</span><span class="op">,</span></span>
+<span id="cb11-370"><a href="#cb11-370" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span></span>
+<span id="cb11-371"><a href="#cb11-371" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">320</span><span class="op">,</span></span>
+<span id="cb11-372"><a href="#cb11-372" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Records"</span> }<span class="op">,</span></span>
+<span id="cb11-373"><a href="#cb11-373" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">,</span></span>
+<span id="cb11-374"><a href="#cb11-374" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb11-375"><a href="#cb11-375" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barX</span>(topJurisprudenceTypes<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"jurisprudence_type"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#7c3aed"</span><span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">sort</span><span class="op">:</span> { <span class="dt">y</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">reverse</span><span class="op">:</span> <span class="kw">true</span> } })<span class="op">,</span></span>
+<span id="cb11-376"><a href="#cb11-376" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])</span>
+<span id="cb11-377"><a href="#cb11-377" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb11-378"><a href="#cb11-378" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-11-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-11-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="top-initiating-actor-types" class="level3 g-col-12">
+<h3 class="anchored" data-anchor-id="top-initiating-actor-types">Top initiating actor types</h3>
+<div class="cell">
+<div class="sourceCode cell-code hidden" id="cb12" data-startfrom="386" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 385;"><span id="cb12-386"><a href="#cb12-386" aria-hidden="true" tabindex="-1"></a>topActorTypes <span class="op">=</span> d3<span class="op">.</span><span class="fu">rollups</span>(filteredActorTypes<span class="op">,</span> values <span class="kw">=&gt;</span> values<span class="op">.</span><span class="at">length</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">actor_type</span>)</span>
+<span id="cb12-387"><a href="#cb12-387" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">sort</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> d3<span class="op">.</span><span class="fu">descending</span>(a[<span class="dv">1</span>]<span class="op">,</span> b[<span class="dv">1</span>]))</span>
+<span id="cb12-388"><a href="#cb12-388" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">12</span>)</span>
+<span id="cb12-389"><a href="#cb12-389" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">map</span>(([actor_type<span class="op">,</span> count]) <span class="kw">=&gt;</span> ({ actor_type<span class="op">,</span> count }))</span>
+<span id="cb12-390"><a href="#cb12-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-391"><a href="#cb12-391" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb12-392"><a href="#cb12-392" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">170</span><span class="op">,</span></span>
+<span id="cb12-393"><a href="#cb12-393" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span></span>
+<span id="cb12-394"><a href="#cb12-394" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">360</span><span class="op">,</span></span>
+<span id="cb12-395"><a href="#cb12-395" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Records"</span> }<span class="op">,</span></span>
+<span id="cb12-396"><a href="#cb12-396" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="kw">null</span> }<span class="op">,</span></span>
+<span id="cb12-397"><a href="#cb12-397" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb12-398"><a href="#cb12-398" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barX</span>(topActorTypes<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"count"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"actor_type"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#0f766e"</span><span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">sort</span><span class="op">:</span> { <span class="dt">y</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">reverse</span><span class="op">:</span> <span class="kw">true</span> } })<span class="op">,</span></span>
+<span id="cb12-399"><a href="#cb12-399" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])</span>
+<span id="cb12-400"><a href="#cb12-400" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb12-401"><a href="#cb12-401" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-12-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-12-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</section>
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="detail-card">
+<p>The record table is structured to support comparative browsing across geography, legal form, status, and jurisprudential framing.</p>
+</div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb10" data-startfrom="240" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 239;"><span id="cb10-240"><a href="#cb10-240" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(filteredData<span class="op">,</span> {</span>
-<span id="cb10-241"><a href="#cb10-241" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [<span class="st">"country"</span><span class="op">,</span> <span class="st">"region"</span><span class="op">,</span> <span class="st">"risk_type"</span><span class="op">,</span> <span class="st">"risk_score"</span><span class="op">,</span> <span class="st">"population_affected"</span>]<span class="op">,</span></span>
-<span id="cb10-242"><a href="#cb10-242" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
-<span id="cb10-243"><a href="#cb10-243" aria-hidden="true" tabindex="-1"></a>    <span class="dt">country</span><span class="op">:</span> <span class="st">"Country"</span><span class="op">,</span></span>
-<span id="cb10-244"><a href="#cb10-244" aria-hidden="true" tabindex="-1"></a>    <span class="dt">region</span><span class="op">:</span> <span class="st">"Region"</span><span class="op">,</span></span>
-<span id="cb10-245"><a href="#cb10-245" aria-hidden="true" tabindex="-1"></a>    <span class="dt">risk_type</span><span class="op">:</span> <span class="st">"Risk Type"</span><span class="op">,</span></span>
-<span id="cb10-246"><a href="#cb10-246" aria-hidden="true" tabindex="-1"></a>    <span class="dt">risk_score</span><span class="op">:</span> <span class="st">"Risk Score"</span><span class="op">,</span></span>
-<span id="cb10-247"><a href="#cb10-247" aria-hidden="true" tabindex="-1"></a>    <span class="dt">population_affected</span><span class="op">:</span> <span class="st">"Population Affected"</span></span>
-<span id="cb10-248"><a href="#cb10-248" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb10-249"><a href="#cb10-249" aria-hidden="true" tabindex="-1"></a>  <span class="dt">format</span><span class="op">:</span> {</span>
-<span id="cb10-250"><a href="#cb10-250" aria-hidden="true" tabindex="-1"></a>    <span class="dt">population_affected</span><span class="op">:</span> d <span class="kw">=&gt;</span> d3<span class="op">.</span><span class="fu">format</span>(<span class="st">","</span>)(d)</span>
-<span id="cb10-251"><a href="#cb10-251" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
-<span id="cb10-252"><a href="#cb10-252" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> {</span>
-<span id="cb10-253"><a href="#cb10-253" aria-hidden="true" tabindex="-1"></a>    <span class="dt">country</span><span class="op">:</span> <span class="dv">150</span><span class="op">,</span></span>
-<span id="cb10-254"><a href="#cb10-254" aria-hidden="true" tabindex="-1"></a>    <span class="dt">region</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span></span>
-<span id="cb10-255"><a href="#cb10-255" aria-hidden="true" tabindex="-1"></a>    <span class="dt">risk_type</span><span class="op">:</span> <span class="dv">110</span><span class="op">,</span></span>
-<span id="cb10-256"><a href="#cb10-256" aria-hidden="true" tabindex="-1"></a>    <span class="dt">risk_score</span><span class="op">:</span> <span class="dv">110</span><span class="op">,</span></span>
-<span id="cb10-257"><a href="#cb10-257" aria-hidden="true" tabindex="-1"></a>    <span class="dt">population_affected</span><span class="op">:</span> <span class="dv">170</span></span>
-<span id="cb10-258"><a href="#cb10-258" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb10-259"><a href="#cb10-259" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code hidden" id="cb13" data-startfrom="414" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 413;"><span id="cb13-414"><a href="#cb13-414" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(filteredData<span class="op">,</span> {</span>
+<span id="cb13-415"><a href="#cb13-415" aria-hidden="true" tabindex="-1"></a>  <span class="dt">columns</span><span class="op">:</span> [</span>
+<span id="cb13-416"><a href="#cb13-416" aria-hidden="true" tabindex="-1"></a>    <span class="st">"title"</span><span class="op">,</span></span>
+<span id="cb13-417"><a href="#cb13-417" aria-hidden="true" tabindex="-1"></a>    <span class="st">"country_name"</span><span class="op">,</span></span>
+<span id="cb13-418"><a href="#cb13-418" aria-hidden="true" tabindex="-1"></a>    <span class="st">"region"</span><span class="op">,</span></span>
+<span id="cb13-419"><a href="#cb13-419" aria-hidden="true" tabindex="-1"></a>    <span class="st">"year_initiated"</span><span class="op">,</span></span>
+<span id="cb13-420"><a href="#cb13-420" aria-hidden="true" tabindex="-1"></a>    <span class="st">"legal_provision"</span><span class="op">,</span></span>
+<span id="cb13-421"><a href="#cb13-421" aria-hidden="true" tabindex="-1"></a>    <span class="st">"status_current"</span><span class="op">,</span></span>
+<span id="cb13-422"><a href="#cb13-422" aria-hidden="true" tabindex="-1"></a>    <span class="st">"jurisprudence_types"</span><span class="op">,</span></span>
+<span id="cb13-423"><a href="#cb13-423" aria-hidden="true" tabindex="-1"></a>    <span class="st">"permalink"</span></span>
+<span id="cb13-424"><a href="#cb13-424" aria-hidden="true" tabindex="-1"></a>  ]<span class="op">,</span></span>
+<span id="cb13-425"><a href="#cb13-425" aria-hidden="true" tabindex="-1"></a>  <span class="dt">header</span><span class="op">:</span> {</span>
+<span id="cb13-426"><a href="#cb13-426" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="st">"Title"</span><span class="op">,</span></span>
+<span id="cb13-427"><a href="#cb13-427" aria-hidden="true" tabindex="-1"></a>    <span class="dt">country_name</span><span class="op">:</span> <span class="st">"Country"</span><span class="op">,</span></span>
+<span id="cb13-428"><a href="#cb13-428" aria-hidden="true" tabindex="-1"></a>    <span class="dt">region</span><span class="op">:</span> <span class="st">"Region"</span><span class="op">,</span></span>
+<span id="cb13-429"><a href="#cb13-429" aria-hidden="true" tabindex="-1"></a>    <span class="dt">year_initiated</span><span class="op">:</span> <span class="st">"Year"</span><span class="op">,</span></span>
+<span id="cb13-430"><a href="#cb13-430" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legal_provision</span><span class="op">:</span> <span class="st">"Legal Provision"</span><span class="op">,</span></span>
+<span id="cb13-431"><a href="#cb13-431" aria-hidden="true" tabindex="-1"></a>    <span class="dt">status_current</span><span class="op">:</span> <span class="st">"Status"</span><span class="op">,</span></span>
+<span id="cb13-432"><a href="#cb13-432" aria-hidden="true" tabindex="-1"></a>    <span class="dt">jurisprudence_types</span><span class="op">:</span> <span class="st">"Jurisprudence Types"</span><span class="op">,</span></span>
+<span id="cb13-433"><a href="#cb13-433" aria-hidden="true" tabindex="-1"></a>    <span class="dt">permalink</span><span class="op">:</span> <span class="st">"Source"</span></span>
+<span id="cb13-434"><a href="#cb13-434" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb13-435"><a href="#cb13-435" aria-hidden="true" tabindex="-1"></a>  <span class="dt">format</span><span class="op">:</span> {</span>
+<span id="cb13-436"><a href="#cb13-436" aria-hidden="true" tabindex="-1"></a>    <span class="dt">permalink</span><span class="op">:</span> value <span class="kw">=&gt;</span> <span class="fu">html</span><span class="vs">`&lt;a href="</span><span class="sc">${</span>value<span class="sc">}</span><span class="vs">" target="_blank" rel="noopener noreferrer"&gt;Open&lt;/a&gt;`</span></span>
+<span id="cb13-437"><a href="#cb13-437" aria-hidden="true" tabindex="-1"></a>  }<span class="op">,</span></span>
+<span id="cb13-438"><a href="#cb13-438" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> {</span>
+<span id="cb13-439"><a href="#cb13-439" aria-hidden="true" tabindex="-1"></a>    <span class="dt">title</span><span class="op">:</span> <span class="dv">360</span><span class="op">,</span></span>
+<span id="cb13-440"><a href="#cb13-440" aria-hidden="true" tabindex="-1"></a>    <span class="dt">country_name</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span></span>
+<span id="cb13-441"><a href="#cb13-441" aria-hidden="true" tabindex="-1"></a>    <span class="dt">region</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span></span>
+<span id="cb13-442"><a href="#cb13-442" aria-hidden="true" tabindex="-1"></a>    <span class="dt">year_initiated</span><span class="op">:</span> <span class="dv">80</span><span class="op">,</span></span>
+<span id="cb13-443"><a href="#cb13-443" aria-hidden="true" tabindex="-1"></a>    <span class="dt">legal_provision</span><span class="op">:</span> <span class="dv">180</span><span class="op">,</span></span>
+<span id="cb13-444"><a href="#cb13-444" aria-hidden="true" tabindex="-1"></a>    <span class="dt">status_current</span><span class="op">:</span> <span class="dv">110</span><span class="op">,</span></span>
+<span id="cb13-445"><a href="#cb13-445" aria-hidden="true" tabindex="-1"></a>    <span class="dt">jurisprudence_types</span><span class="op">:</span> <span class="dv">240</span><span class="op">,</span></span>
+<span id="cb13-446"><a href="#cb13-446" aria-hidden="true" tabindex="-1"></a>    <span class="dt">permalink</span><span class="op">:</span> <span class="dv">80</span></span>
+<span id="cb13-447"><a href="#cb13-447" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-448"><a href="#cb13-448" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="ojs-cell-10" data-nodetype="expression">
+<div id="ojs-cell-13" data-nodetype="expression">
 
 </div>
 </div>
@@ -486,18 +950,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <hr>
-<p><strong>Data Source:</strong> Simulated environmental risk data for demonstration purposes. Last updated: 2026.</p>
+<p><strong>Data source:</strong> EJM ecological jurisprudence initiative records, prepared for interactive analysis and mapping.</p>
 
 
 <div class="ojs-auto-generated hidden">
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7ZmlsdGVyZWREYXRhLmxlbmd0aH08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTEifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke2QzLmZvcm1hdChcIi4xZlwiKShkMy5tZWFuKGZpbHRlcmVkRGF0YSwgZCA9PiBkLnJpc2tfc2NvcmUpKX08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke2QzLmZvcm1hdChcIi4yc1wiKShkMy5zdW0oZmlsdGVyZWREYXRhLCBkID0+IGQucG9wdWxhdGlvbl9hZmZlY3RlZCkpfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtMyJ9XX0=
+eyJjb250ZW50cyI6WyAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7ZmlsdGVyZWREYXRhLmxlbmd0aH08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTEifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke2NvdW50cnlDb3VudH08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTIifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3llYXJMYWJlbH08L3NwYW4+YCIsICJjZWxsTmFtZSI6Im9qcy1lbGVtZW50LWlkLTMifSwgIHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImlubGluZSI6InRydWUiLCJzb3VyY2UiOiJodGwuaHRtbGA8c3Bhbj4ke3JvbkNvdW50fTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNCJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7aW5kaWdlbm91c0NvdW50fTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNSJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3VtbWFyeS5yb3dzfTwvc3Bhbj5gIiwgImNlbGxOYW1lIjoib2pzLWVsZW1lbnQtaWQtNiJ9LCAgeyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiaW5saW5lIjoidHJ1ZSIsInNvdXJjZSI6Imh0bC5odG1sYDxzcGFuPiR7c3VtbWFyeS5jb3VudHJpZXN9PC9zcGFuPmAiLCAiY2VsbE5hbWUiOiJvanMtZWxlbWVudC1pZC03In1dfQ==
 </script>
 </div>
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIExvYWQgdGhlIGVudmlyb25tZW50YWwgcmlzayBkYXRhXG5kYXRhID0gRmlsZUF0dGFjaG1lbnQoXCJkYXRhL2Vudmlyb25tZW50YWxfcmlza3MuY3N2XCIpLmNzdih7IHR5cGVkOiB0cnVlIH0pXG5cbi8vIEdldCB1bmlxdWUgdmFsdWVzIGZvciBmaWx0ZXJzXG5yZWdpb25zID0gW1wiQWxsIFJlZ2lvbnNcIiwgLi4ubmV3IFNldChkYXRhLm1hcChkID0+IGQucmVnaW9uKSldXG5yaXNrVHlwZXMgPSBbXCJBbGwgVHlwZXNcIiwgLi4ubmV3IFNldChkYXRhLm1hcChkID0+IGQucmlza190eXBlKSldXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2Ygc2VsZWN0ZWRSZWdpb24gPSBJbnB1dHMuc2VsZWN0KHJlZ2lvbnMsIHtcbiAgbGFiZWw6IFwiUmVnaW9uXCIsXG4gIHZhbHVlOiBcIkFsbCBSZWdpb25zXCJcbn0pXG5cbnZpZXdvZiBzZWxlY3RlZFJpc2tUeXBlID0gSW5wdXRzLnNlbGVjdChyaXNrVHlwZXMsIHtcbiAgbGFiZWw6IFwiUmlzayBUeXBlXCIsXG4gIHZhbHVlOiBcIkFsbCBUeXBlc1wiXG59KVxuXG52aWV3b2YgbWluUmlza1Njb3JlID0gSW5wdXRzLnJhbmdlKFswLCAxMF0sIHtcbiAgbGFiZWw6IFwiTWluaW11bSBSaXNrIFNjb3JlXCIsXG4gIHZhbHVlOiAwLFxuICBzdGVwOiAwLjVcbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyBGaWx0ZXIgZGF0YSBiYXNlZCBvbiB1c2VyIHNlbGVjdGlvbnNcbmZpbHRlcmVkRGF0YSA9IGRhdGEuZmlsdGVyKGQgPT4ge1xuICBjb25zdCByZWdpb25NYXRjaCA9IHNlbGVjdGVkUmVnaW9uID09PSBcIkFsbCBSZWdpb25zXCIgfHwgZC5yZWdpb24gPT09IHNlbGVjdGVkUmVnaW9uXG4gIGNvbnN0IHJpc2tNYXRjaCA9IHNlbGVjdGVkUmlza1R5cGUgPT09IFwiQWxsIFR5cGVzXCIgfHwgZC5yaXNrX3R5cGUgPT09IHNlbGVjdGVkUmlza1R5cGVcbiAgY29uc3Qgc2NvcmVNYXRjaCA9IGQucmlza19zY29yZSA+PSBtaW5SaXNrU2NvcmVcbiAgcmV0dXJuIHJlZ2lvbk1hdGNoICYmIHJpc2tNYXRjaCAmJiBzY29yZU1hdGNoXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC00IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gTGVhZmxldCBDU1Ncbmh0bWxgPGxpbmsgcmVsPVwic3R5bGVzaGVldFwiIGhyZWY9XCJodHRwczovL3VucGtnLmNvbS9sZWFmbGV0QDEuOS40L2Rpc3QvbGVhZmxldC5jc3NcIi8+YFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC01IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoibGVhZmxldCA9IHJlcXVpcmUoXCJsZWFmbGV0QDEuOS40XCIpXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJtYXBEaXNwbGF5ID0ge1xuICBjb25zdCBjb250YWluZXIgPSBodG1sYDxkaXYgY2xhc3M9XCJtYXAtY29udGFpbmVyXCI+PGRpdiBjbGFzcz1cIm1hcC1pbm5lclwiPjwvZGl2PjwvZGl2PmBcbiAgeWllbGQgY29udGFpbmVyXG5cbiAgLy8gSW5pdGlhbGl6ZSBtYXAgb24gdGhlIGlubmVyIGVsZW1lbnRcbiAgY29uc3QgbWFwID0gbGVhZmxldC5tYXAoY29udGFpbmVyLnF1ZXJ5U2VsZWN0b3IoXCIubWFwLWlubmVyXCIpKS5zZXRWaWV3KFsyMCwgMF0sIDIpXG5cbiAgbGVhZmxldC50aWxlTGF5ZXIoXCJodHRwczovL3tzfS50aWxlLm9wZW5zdHJlZXRtYXAub3JnL3t6fS97eH0ve3l9LnBuZ1wiLCB7XG4gICAgYXR0cmlidXRpb246IFwiwqkgT3BlblN0cmVldE1hcCBjb250cmlidXRvcnNcIixcbiAgICBtYXhab29tOiAxOFxuICB9KS5hZGRUbyhtYXApXG5cbiAgY29uc3QgY29sb3JzID0ge1xuICAgIEZsb29kOiBcIiMzNDk4ZGJcIixcbiAgICBEcm91Z2h0OiBcIiNmMzljMTJcIixcbiAgICBXaWxkZmlyZTogXCIjZTc0YzNjXCIsXG4gICAgU3Rvcm06IFwiIzliNTliNlwiXG4gIH1cblxuICBmaWx0ZXJlZERhdGEuZm9yRWFjaChkID0+IHtcbiAgICBsZWFmbGV0LmNpcmNsZU1hcmtlcihbZC5sYXQsIGQubG9uXSwge1xuICAgICAgcmFkaXVzOiBkLnJpc2tfc2NvcmUgKiAyLjUsXG4gICAgICBmaWxsQ29sb3I6IGNvbG9yc1tkLnJpc2tfdHlwZV0gPz8gXCIjNjQ3NDhiXCIsXG4gICAgICBjb2xvcjogXCIjZmZmXCIsXG4gICAgICB3ZWlnaHQ6IDIsXG4gICAgICBmaWxsT3BhY2l0eTogMC43XG4gICAgfSlcbiAgICAgIC5iaW5kUG9wdXAoYFxuICAgICAgICA8Yj4ke2QuY291bnRyeX08L2I+PGJyPlxuICAgICAgICBUeXBlOiAke2Qucmlza190eXBlfTxicj5cbiAgICAgICAgU2NvcmU6ICR7ZC5yaXNrX3Njb3JlfS8xMDxicj5cbiAgICAgICAgQWZmZWN0ZWQ6ICR7ZDMuZm9ybWF0KFwiLFwiKShkLnBvcHVsYXRpb25fYWZmZWN0ZWQpfVxuICAgICAgYClcbiAgICAgIC5hZGRUbyhtYXApXG4gIH0pXG5cbiAgc2V0VGltZW91dCgoKSA9PiBtYXAuaW52YWxpZGF0ZVNpemUoKSwgMTAwKVxufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiUGxvdC5wbG90KHtcbiAgbWFyZ2luTGVmdDogNjAsXG4gIG1hcmdpbkJvdHRvbTogNjAsXG4gIHg6IHsgbGFiZWw6IFwiUmlzayBUeXBlXCIgfSxcbiAgeTogeyBsYWJlbDogXCJDb3VudFwiIH0sXG4gIG1hcmtzOiBbXG4gICAgUGxvdC5iYXJZKFxuICAgICAgZmlsdGVyZWREYXRhLFxuICAgICAgUGxvdC5ncm91cFgoeyB5OiBcImNvdW50XCIgfSwgeyB4OiBcInJpc2tfdHlwZVwiLCBmaWxsOiBcInJpc2tfdHlwZVwiLCB0aXA6IHRydWUgfSlcbiAgICApLFxuICAgIFBsb3QucnVsZVkoWzBdKVxuICBdLFxuICBjb2xvcjoge1xuICAgIGRvbWFpbjogW1wiRmxvb2RcIiwgXCJEcm91Z2h0XCIsIFwiV2lsZGZpcmVcIiwgXCJTdG9ybVwiXSxcbiAgICByYW5nZTogW1wiIzM0OThkYlwiLCBcIiNmMzljMTJcIiwgXCIjZTc0YzNjXCIsIFwiIzliNTliNlwiXVxuICB9XG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC04IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiUGxvdC5wbG90KHtcbiAgbWFyZ2luTGVmdDogMTIwLFxuICBtYXJnaW5Cb3R0b206IDYwLFxuICB4OiB7IGxhYmVsOiBcIkF2ZXJhZ2UgUmlzayBTY29yZVwiIH0sXG4gIHk6IHsgbGFiZWw6IFwiUmVnaW9uXCIgfSxcbiAgbWFya3M6IFtcbiAgICBQbG90LmJhclgoXG4gICAgICBmaWx0ZXJlZERhdGEsXG4gICAgICBQbG90Lmdyb3VwWSh7IHg6IFwibWVhblwiIH0sIHsgeTogXCJyZWdpb25cIiwgeDogXCJyaXNrX3Njb3JlXCIsIHRpcDogdHJ1ZSB9KVxuICAgICksXG4gICAgUGxvdC5ydWxlWChbMF0pXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTkiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ0b3BDb3VudHJpZXMgPSBmaWx0ZXJlZERhdGFcbiAgLnNsaWNlKClcbiAgLnNvcnQoKGEsIGIpID0+IGIucG9wdWxhdGlvbl9hZmZlY3RlZCAtIGEucG9wdWxhdGlvbl9hZmZlY3RlZClcbiAgLnNsaWNlKDAsIDE1KVxuXG5QbG90LnBsb3Qoe1xuICBtYXJnaW5MZWZ0OiAxMDAsXG4gIG1hcmdpbkJvdHRvbTogNjAsXG4gIGhlaWdodDogNDAwLFxuICB4OiB7IGxhYmVsOiBcIlBvcHVsYXRpb24gQWZmZWN0ZWRcIiwgdGlja0Zvcm1hdDogXCJ+c1wiIH0sXG4gIHk6IHsgbGFiZWw6IFwiQ291bnRyeVwiIH0sXG4gIG1hcmtzOiBbXG4gICAgUGxvdC5iYXJYKHRvcENvdW50cmllcywge1xuICAgICAgeDogXCJwb3B1bGF0aW9uX2FmZmVjdGVkXCIsXG4gICAgICB5OiBcImNvdW50cnlcIixcbiAgICAgIGZpbGw6IFwicmlza190eXBlXCIsXG4gICAgICB0aXA6IHRydWUsXG4gICAgICBzb3J0OiB7IHk6IFwieFwiLCByZXZlcnNlOiB0cnVlIH1cbiAgICB9KSxcbiAgICBQbG90LnJ1bGVYKFswXSlcbiAgXSxcbiAgY29sb3I6IHtcbiAgICBkb21haW46IFtcIkZsb29kXCIsIFwiRHJvdWdodFwiLCBcIldpbGRmaXJlXCIsIFwiU3Rvcm1cIl0sXG4gICAgcmFuZ2U6IFtcIiMzNDk4ZGJcIiwgXCIjZjM5YzEyXCIsIFwiI2U3NGMzY1wiLCBcIiM5YjU5YjZcIl1cbiAgfVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTAiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJJbnB1dHMudGFibGUoZmlsdGVyZWREYXRhLCB7XG4gIGNvbHVtbnM6IFtcImNvdW50cnlcIiwgXCJyZWdpb25cIiwgXCJyaXNrX3R5cGVcIiwgXCJyaXNrX3Njb3JlXCIsIFwicG9wdWxhdGlvbl9hZmZlY3RlZFwiXSxcbiAgaGVhZGVyOiB7XG4gICAgY291bnRyeTogXCJDb3VudHJ5XCIsXG4gICAgcmVnaW9uOiBcIlJlZ2lvblwiLFxuICAgIHJpc2tfdHlwZTogXCJSaXNrIFR5cGVcIixcbiAgICByaXNrX3Njb3JlOiBcIlJpc2sgU2NvcmVcIixcbiAgICBwb3B1bGF0aW9uX2FmZmVjdGVkOiBcIlBvcHVsYXRpb24gQWZmZWN0ZWRcIlxuICB9LFxuICBmb3JtYXQ6IHtcbiAgICBwb3B1bGF0aW9uX2FmZmVjdGVkOiBkID0+IGQzLmZvcm1hdChcIixcIikoZClcbiAgfSxcbiAgd2lkdGg6IHtcbiAgICBjb3VudHJ5OiAxNTAsXG4gICAgcmVnaW9uOiAxMjAsXG4gICAgcmlza190eXBlOiAxMTAsXG4gICAgcmlza19zY29yZTogMTEwLFxuICAgIHBvcHVsYXRpb25fYWZmZWN0ZWQ6IDE3MFxuICB9XG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzZWxlY3RlZFJlZ2lvbicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzZWxlY3RlZFJpc2tUeXBlJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ21pblJpc2tTY29yZScpIn1dfQ==
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InJlY29yZHMgPSBGaWxlQXR0YWNobWVudChcImRhdGEvMDJfY2xlYW5lZC9lam1fcmVjb3Jkcy5jc3ZcIikuY3N2KHsgdHlwZWQ6IHRydWUgfSlcbmp1cmlzcHJ1ZGVuY2VUeXBlcyA9IEZpbGVBdHRhY2htZW50KFwiZGF0YS8wMl9jbGVhbmVkL2VqbV9qdXJpc3BydWRlbmNlX3R5cGVzLmNzdlwiKS5jc3YoeyB0eXBlZDogdHJ1ZSB9KVxuYWN0b3JUeXBlcyA9IEZpbGVBdHRhY2htZW50KFwiZGF0YS8wMl9jbGVhbmVkL2VqbV9hY3Rvcl90eXBlcy5jc3ZcIikuY3N2KHsgdHlwZWQ6IHRydWUgfSlcbnN1bW1hcnkgPSBGaWxlQXR0YWNobWVudChcImRhdGEvMDJfY2xlYW5lZC9lam1fc3VtbWFyeS5qc29uXCIpLmpzb24oKVxuXG5yZWdpb25zID0gW1wiQWxsIFJlZ2lvbnNcIiwgLi4ubmV3IFNldChyZWNvcmRzLm1hcChkID0+IGQucmVnaW9uKS5maWx0ZXIoQm9vbGVhbikpXVxubGVnYWxQcm92aXNpb25zID0gW1wiQWxsIExlZ2FsIFByb3Zpc2lvbnNcIiwgLi4ubmV3IFNldChyZWNvcmRzLm1hcChkID0+IGQubGVnYWxfcHJvdmlzaW9uKS5maWx0ZXIoQm9vbGVhbikpXVxuc3RhdHVzT3B0aW9ucyA9IFtcIkFsbCBTdGF0dXNlc1wiLCAuLi5uZXcgU2V0KHJlY29yZHMubWFwKGQgPT4gZC5zdGF0dXNfY3VycmVudCkuZmlsdGVyKEJvb2xlYW4pKV1cbmp1cmlzcHJ1ZGVuY2VPcHRpb25zID0gW1wiQWxsIEp1cmlzcHJ1ZGVuY2UgVHlwZXNcIiwgLi4ubmV3IFNldChqdXJpc3BydWRlbmNlVHlwZXMubWFwKGQgPT4gZC5qdXJpc3BydWRlbmNlX3R5cGUpLmZpbHRlcihCb29sZWFuKSldXG5hY3RvclR5cGVPcHRpb25zID0gW1wiQWxsIEFjdG9yIFR5cGVzXCIsIC4uLm5ldyBTZXQoYWN0b3JUeXBlcy5tYXAoZCA9PiBkLmFjdG9yX3R5cGUpLmZpbHRlcihCb29sZWFuKSldXG5cbnllYXJFeHRlbnQgPSBkMy5leHRlbnQocmVjb3JkcywgZCA9PiBkLnllYXJfaW5pdGlhdGVkKVxuXG50aGVtZU9wdGlvbnMgPSBbXG4gIHsgbGFiZWw6IFwiUmlnaHRzIG9mIE5hdHVyZVwiLCBjb2x1bW46IFwicm9uXCIgfSxcbiAgeyBsYWJlbDogXCJQZXJzb25ob29kXCIsIGNvbHVtbjogXCJwZXJzb25ob29kXCIgfSxcbiAgeyBsYWJlbDogXCJBbmltYWwgUmlnaHRzXCIsIGNvbHVtbjogXCJhbmltYWxfcmlnaHRzXCIgfSxcbiAgeyBsYWJlbDogXCJMb2NhbCBFY28gS25vd2xlZGdlXCIsIGNvbHVtbjogXCJsZWtcIiB9LFxuICB7IGxhYmVsOiBcIkluZGlnZW5vdXMgRnJhbWluZ1wiLCBjb2x1bW46IFwiaW5kaWdlbm91c19mcmFtaW5nXCIgfSxcbiAgeyBsYWJlbDogXCJFY28tR292ZXJuYW5jZVwiLCBjb2x1bW46IFwiZWNvX2dvdlwiIH1cbl1cblxubGVnYWxQcm92aXNpb25Db2xvcnMgPSBuZXcgTWFwKFtcbiAgW1wiTGVnaXNsYXRpb25cIiwgXCIjYjQ1MzA5XCJdLFxuICBbXCJDb3VydCBDYXNlXCIsIFwiIzBmNzY2ZVwiXSxcbiAgW1wiRGVjbGFyYXRpb25cIiwgXCIjN2MzYWVkXCJdLFxuICBbXCJDaXZpbCBTb2NpZXR5IERlY2xhcmF0aW9uXCIsIFwiI2RjMjYyNlwiXSxcbiAgW1wiQ29uc3RpdHV0aW9uXCIsIFwiIzFkNGVkOFwiXSxcbiAgW1wiSW5kaWdlbm91cyBEZWNsYXJhdGlvblwiLCBcIiMwNTk2NjlcIl0sXG4gIFtcIkluZGlnZW5vdXMgTGF3XCIsIFwiIzA4OTFiMlwiXSxcbiAgW1wiUG9saWN5XCIsIFwiIzMzNDE1NVwiXSxcbiAgW1wiQ2l2aWwgU29jaWV0eSBUcmlidW5hbFwiLCBcIiNiZTE4NWRcIl0sXG4gIFtcIlBvc2l0aW9uIFN0YXRlbWVudFwiLCBcIiM5MzMzZWFcIl0sXG4gIFtcIlByaXZhdGUgU2VjdG9yIEdvdmVybmFuY2VcIiwgXCIjNGY0NmU1XCJdXG5dKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIHNlYXJjaFF1ZXJ5ID0gSW5wdXRzLnRleHQoe1xuICBsYWJlbDogXCJTZWFyY2hcIixcbiAgcGxhY2Vob2xkZXI6IFwiVGl0bGUsIGNvdW50cnksIGxvY2F0aW9uLCBhY3RvclwiXG59KVxuXG52aWV3b2Ygc2VsZWN0ZWRSZWdpb24gPSBJbnB1dHMuc2VsZWN0KHJlZ2lvbnMsIHtcbiAgbGFiZWw6IFwiUmVnaW9uXCIsXG4gIHZhbHVlOiBcIkFsbCBSZWdpb25zXCJcbn0pXG5cbnZpZXdvZiBzZWxlY3RlZExlZ2FsUHJvdmlzaW9uID0gSW5wdXRzLnNlbGVjdChsZWdhbFByb3Zpc2lvbnMsIHtcbiAgbGFiZWw6IFwiTGVnYWwgUHJvdmlzaW9uXCIsXG4gIHZhbHVlOiBcIkFsbCBMZWdhbCBQcm92aXNpb25zXCJcbn0pXG5cbnZpZXdvZiBzZWxlY3RlZFN0YXR1cyA9IElucHV0cy5zZWxlY3Qoc3RhdHVzT3B0aW9ucywge1xuICBsYWJlbDogXCJDdXJyZW50IFN0YXR1c1wiLFxuICB2YWx1ZTogXCJBbGwgU3RhdHVzZXNcIlxufSlcblxudmlld29mIHNlbGVjdGVkSnVyaXNwcnVkZW5jZVR5cGUgPSBJbnB1dHMuc2VsZWN0KGp1cmlzcHJ1ZGVuY2VPcHRpb25zLCB7XG4gIGxhYmVsOiBcIkp1cmlzcHJ1ZGVuY2UgVHlwZVwiLFxuICB2YWx1ZTogXCJBbGwgSnVyaXNwcnVkZW5jZSBUeXBlc1wiXG59KVxuXG52aWV3b2Ygc2VsZWN0ZWRBY3RvclR5cGUgPSBJbnB1dHMuc2VsZWN0KGFjdG9yVHlwZU9wdGlvbnMsIHtcbiAgbGFiZWw6IFwiSW5pdGlhdGluZyBBY3RvciBUeXBlXCIsXG4gIHZhbHVlOiBcIkFsbCBBY3RvciBUeXBlc1wiXG59KVxuXG52aWV3b2Ygc2VsZWN0ZWRUaGVtZXMgPSBJbnB1dHMuY2hlY2tib3godGhlbWVPcHRpb25zLm1hcChkID0+IGQubGFiZWwpLCB7XG4gIGxhYmVsOiBcIlRoZW1lIEZsYWdzXCJcbn0pXG5cbnZpZXdvZiBtaW5ZZWFyID0gSW5wdXRzLnJhbmdlKHllYXJFeHRlbnQsIHtcbiAgbGFiZWw6IFwiRnJvbSBZZWFyXCIsXG4gIHZhbHVlOiB5ZWFyRXh0ZW50WzBdLFxuICBzdGVwOiAxXG59KVxuXG52aWV3b2YgbWF4WWVhciA9IElucHV0cy5yYW5nZSh5ZWFyRXh0ZW50LCB7XG4gIGxhYmVsOiBcIlRvIFllYXJcIixcbiAgdmFsdWU6IHllYXJFeHRlbnRbMV0sXG4gIHN0ZXA6IDFcbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJub3JtYWxpemVkU2VhcmNoID0gKHNlYXJjaFF1ZXJ5ID8/IFwiXCIpLnRyaW0oKS50b0xvd2VyQ2FzZSgpXG5sb3dlclllYXIgPSBNYXRoLm1pbihtaW5ZZWFyLCBtYXhZZWFyKVxudXBwZXJZZWFyID0gTWF0aC5tYXgobWluWWVhciwgbWF4WWVhcilcbnNlbGVjdGVkVGhlbWVDb2x1bW5zID0gdGhlbWVPcHRpb25zXG4gIC5maWx0ZXIoZCA9PiBzZWxlY3RlZFRoZW1lcy5pbmNsdWRlcyhkLmxhYmVsKSlcbiAgLm1hcChkID0+IGQuY29sdW1uKVxuXG5maWx0ZXJlZERhdGEgPSByZWNvcmRzLmZpbHRlcihkID0+IHtcbiAgY29uc3QgdGV4dEJsb2IgPSBbXG4gICAgZC50aXRsZSxcbiAgICBkLmNvdW50cnlfbmFtZSxcbiAgICBkLmxvY2F0aW9uLFxuICAgIGQuaW5pdGlhdGluZ19hY3Rvcl9uYW1lLFxuICAgIGQuZWNvbG9naWNhbF9hY3Rvcl9uYW1lLFxuICAgIGQuanVyaXNwcnVkZW5jZV90eXBlc1xuICBdLmpvaW4oXCIgXCIpLnRvTG93ZXJDYXNlKClcblxuICBjb25zdCByZWdpb25NYXRjaCA9IHNlbGVjdGVkUmVnaW9uID09PSBcIkFsbCBSZWdpb25zXCIgfHwgZC5yZWdpb24gPT09IHNlbGVjdGVkUmVnaW9uXG4gIGNvbnN0IGxlZ2FsUHJvdmlzaW9uTWF0Y2ggPSBzZWxlY3RlZExlZ2FsUHJvdmlzaW9uID09PSBcIkFsbCBMZWdhbCBQcm92aXNpb25zXCIgfHwgZC5sZWdhbF9wcm92aXNpb24gPT09IHNlbGVjdGVkTGVnYWxQcm92aXNpb25cbiAgY29uc3Qgc3RhdHVzTWF0Y2ggPSBzZWxlY3RlZFN0YXR1cyA9PT0gXCJBbGwgU3RhdHVzZXNcIiB8fCBkLnN0YXR1c19jdXJyZW50ID09PSBzZWxlY3RlZFN0YXR1c1xuICBjb25zdCB5ZWFyTWF0Y2ggPSAoIWQueWVhcl9pbml0aWF0ZWQgfHwgKGQueWVhcl9pbml0aWF0ZWQgPj0gbG93ZXJZZWFyICYmIGQueWVhcl9pbml0aWF0ZWQgPD0gdXBwZXJZZWFyKSlcbiAgY29uc3Qgc2VhcmNoTWF0Y2ggPSAhbm9ybWFsaXplZFNlYXJjaCB8fCB0ZXh0QmxvYi5pbmNsdWRlcyhub3JtYWxpemVkU2VhcmNoKVxuXG4gIGNvbnN0IGp1cmlzcHJ1ZGVuY2VMaXN0ID0gZC5qdXJpc3BydWRlbmNlX3R5cGVzID8gZC5qdXJpc3BydWRlbmNlX3R5cGVzLnNwbGl0KFwiIHwgXCIpIDogW11cbiAgY29uc3QgYWN0b3JUeXBlTGlzdCA9IGQuaW5pdGlhdGluZ19hY3Rvcl90eXBlcyA/IGQuaW5pdGlhdGluZ19hY3Rvcl90eXBlcy5zcGxpdChcIiB8IFwiKSA6IFtdXG5cbiAgY29uc3QganVyaXNwcnVkZW5jZU1hdGNoID0gc2VsZWN0ZWRKdXJpc3BydWRlbmNlVHlwZSA9PT0gXCJBbGwgSnVyaXNwcnVkZW5jZSBUeXBlc1wiIHx8IGp1cmlzcHJ1ZGVuY2VMaXN0LmluY2x1ZGVzKHNlbGVjdGVkSnVyaXNwcnVkZW5jZVR5cGUpXG4gIGNvbnN0IGFjdG9yVHlwZU1hdGNoID0gc2VsZWN0ZWRBY3RvclR5cGUgPT09IFwiQWxsIEFjdG9yIFR5cGVzXCIgfHwgYWN0b3JUeXBlTGlzdC5pbmNsdWRlcyhzZWxlY3RlZEFjdG9yVHlwZSlcbiAgY29uc3QgdGhlbWVNYXRjaCA9IHNlbGVjdGVkVGhlbWVDb2x1bW5zLmV2ZXJ5KGNvbHVtbiA9PiBkW2NvbHVtbl0gPT09IDEpXG5cbiAgcmV0dXJuIHJlZ2lvbk1hdGNoICYmIGxlZ2FsUHJvdmlzaW9uTWF0Y2ggJiYgc3RhdHVzTWF0Y2ggJiYgeWVhck1hdGNoICYmIHNlYXJjaE1hdGNoICYmIGp1cmlzcHJ1ZGVuY2VNYXRjaCAmJiBhY3RvclR5cGVNYXRjaCAmJiB0aGVtZU1hdGNoXG59KVxuXG5maWx0ZXJlZElkcyA9IG5ldyBTZXQoZmlsdGVyZWREYXRhLm1hcChkID0+IGQucmVjb3JkX2lkKSlcbmZpbHRlcmVkSnVyaXNwcnVkZW5jZSA9IGp1cmlzcHJ1ZGVuY2VUeXBlcy5maWx0ZXIoZCA9PiBmaWx0ZXJlZElkcy5oYXMoZC5yZWNvcmRfaWQpKVxuZmlsdGVyZWRBY3RvclR5cGVzID0gYWN0b3JUeXBlcy5maWx0ZXIoZCA9PiBmaWx0ZXJlZElkcy5oYXMoZC5yZWNvcmRfaWQpKVxuXG5jb3VudHJ5Q291bnQgPSBuZXcgU2V0KGZpbHRlcmVkRGF0YS5tYXAoZCA9PiBkLmNvdW50cnlfbmFtZSkuZmlsdGVyKEJvb2xlYW4pKS5zaXplXG5yb25Db3VudCA9IGQzLnN1bShmaWx0ZXJlZERhdGEsIGQgPT4gZC5yb24pXG5pbmRpZ2Vub3VzQ291bnQgPSBkMy5zdW0oZmlsdGVyZWREYXRhLCBkID0+IGQuaW5kaWdlbm91c19mcmFtaW5nIHx8IGQuYWN0b3JfaW5kaWdlbm91cylcbm1pbkZpbHRlcmVkWWVhciA9IGQzLm1pbihmaWx0ZXJlZERhdGEsIGQgPT4gZC55ZWFyX2luaXRpYXRlZClcbm1heEZpbHRlcmVkWWVhciA9IGQzLm1heChmaWx0ZXJlZERhdGEsIGQgPT4gZC55ZWFyX2luaXRpYXRlZClcbnllYXJMYWJlbCA9IGZpbHRlcmVkRGF0YS5sZW5ndGggPyBgJHttaW5GaWx0ZXJlZFllYXJ9LSR7bWF4RmlsdGVyZWRZZWFyfWAgOiBcIk5vIGRhdGFcIlxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC00IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiaHRtbGA8bGluayByZWw9XCJzdHlsZXNoZWV0XCIgaHJlZj1cImh0dHBzOi8vdW5wa2cuY29tL2xlYWZsZXRAMS45LjQvZGlzdC9sZWFmbGV0LmNzc1wiLz5gXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJsZWFmbGV0ID0gcmVxdWlyZShcImxlYWZsZXRAMS45LjRcIilcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Im1hcERpc3BsYXkgPSB7XG4gIGNvbnN0IGNvbnRhaW5lciA9IGh0bWxgPGRpdiBjbGFzcz1cIm1hcC1jb250YWluZXJcIj48ZGl2IGNsYXNzPVwibWFwLWlubmVyXCI+PC9kaXY+PC9kaXY+YFxuICB5aWVsZCBjb250YWluZXJcblxuICBjb25zdCBtYXAgPSBsZWFmbGV0Lm1hcChjb250YWluZXIucXVlcnlTZWxlY3RvcihcIi5tYXAtaW5uZXJcIiksIHtcbiAgICB3b3JsZENvcHlKdW1wOiB0cnVlLFxuICAgIHNjcm9sbFdoZWVsWm9vbTogZmFsc2VcbiAgfSkuc2V0VmlldyhbMTUsIC0xMF0sIDIpXG5cbiAgbGVhZmxldC50aWxlTGF5ZXIoXCJodHRwczovL3tzfS50aWxlLm9wZW5zdHJlZXRtYXAub3JnL3t6fS97eH0ve3l9LnBuZ1wiLCB7XG4gICAgYXR0cmlidXRpb246IFwiJmNvcHk7IE9wZW5TdHJlZXRNYXAgY29udHJpYnV0b3JzXCIsXG4gICAgbWF4Wm9vbTogMThcbiAgfSkuYWRkVG8obWFwKVxuXG4gIGNvbnN0IG1hcmtlcnMgPSBbXVxuXG4gIGZpbHRlcmVkRGF0YS5mb3JFYWNoKGQgPT4ge1xuICAgIGlmIChkLmxhdCA9PSBudWxsIHx8IGQubG9uID09IG51bGwgfHwgZC5sYXQgPT09IFwiXCIgfHwgZC5sb24gPT09IFwiXCIpIHJldHVyblxuICAgIGNvbnN0IGZpbGxDb2xvciA9IGxlZ2FsUHJvdmlzaW9uQ29sb3JzLmdldChkLmxlZ2FsX3Byb3Zpc2lvbikgPz8gXCIjNjQ3NDhiXCJcbiAgICBjb25zdCBtYXJrZXIgPSBsZWFmbGV0LmNpcmNsZU1hcmtlcihbZC5sYXQsIGQubG9uXSwge1xuICAgICAgcmFkaXVzOiA2LFxuICAgICAgZmlsbENvbG9yLFxuICAgICAgY29sb3I6IFwiI2ZmZmZmZlwiLFxuICAgICAgd2VpZ2h0OiAxLjUsXG4gICAgICBmaWxsT3BhY2l0eTogMC44MlxuICAgIH0pXG5cbiAgICBtYXJrZXIuYmluZFBvcHVwKGBcbiAgICAgIDxkaXYgc3R5bGU9XCJtaW4td2lkdGg6IDI0MHB4O1wiPlxuICAgICAgICA8c3Ryb25nPiR7ZC50aXRsZX08L3N0cm9uZz48YnI+XG4gICAgICAgIDxzcGFuPiR7ZC5jb3VudHJ5X25hbWV9JHtkLmxvY2F0aW9uID8gYCwgJHtkLmxvY2F0aW9ufWAgOiBcIlwifTwvc3Bhbj48YnI+XG4gICAgICAgIDxzcGFuPiR7ZC5sZWdhbF9wcm92aXNpb259IHwgJHtkLnN0YXR1c19jdXJyZW50fTwvc3Bhbj48YnI+XG4gICAgICAgIDxzcGFuPkluaXRpYXRlZDogJHtkLnllYXJfaW5pdGlhdGVkIHx8IFwiVW5zcGVjaWZpZWRcIn08L3NwYW4+PGJyPlxuICAgICAgICA8c3Bhbj4ke2QuanVyaXNwcnVkZW5jZV90eXBlcyB8fCBcIlVuc3BlY2lmaWVkXCJ9PC9zcGFuPjxicj5cbiAgICAgICAgPGEgaHJlZj1cIiR7ZC5wZXJtYWxpbmt9XCIgdGFyZ2V0PVwiX2JsYW5rXCIgcmVsPVwibm9vcGVuZXIgbm9yZWZlcnJlclwiPk9wZW4gc291cmNlIHJlY29yZDwvYT5cbiAgICAgIDwvZGl2PlxuICAgIGApXG5cbiAgICBtYXJrZXIuYWRkVG8obWFwKVxuICAgIG1hcmtlcnMucHVzaChtYXJrZXIpXG4gIH0pXG5cbiAgaWYgKG1hcmtlcnMubGVuZ3RoKSB7XG4gICAgY29uc3QgZ3JvdXAgPSBsZWFmbGV0LmZlYXR1cmVHcm91cChtYXJrZXJzKVxuICAgIG1hcC5maXRCb3VuZHMoZ3JvdXAuZ2V0Qm91bmRzKCkucGFkKDAuMTUpKVxuICB9XG5cbiAgc2V0VGltZW91dCgoKSA9PiBtYXAuaW52YWxpZGF0ZVNpemUoKSwgMTAwKVxuICBpbnZhbGlkYXRpb24udGhlbigoKSA9PiBtYXAucmVtb3ZlKCkpXG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTciLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJsZWdlbmRJdGVtcyA9IEFycmF5LmZyb20obGVnYWxQcm92aXNpb25Db2xvcnMuZW50cmllcygpKVxuICAuZmlsdGVyKChbbmFtZV0pID0+IGZpbHRlcmVkRGF0YS5zb21lKGQgPT4gZC5sZWdhbF9wcm92aXNpb24gPT09IG5hbWUpKVxuICAuc2xpY2UoMCwgOClcblxuaHRtbGA8ZGl2IGNsYXNzPVwibGVnZW5kXCI+JHtsZWdlbmRJdGVtcy5tYXAoKFtuYW1lLCBjb2xvcl0pID0+IGh0bWxgPHNwYW4gY2xhc3M9XCJsZWdlbmQtaXRlbVwiPjxzcGFuIGNsYXNzPVwibGVnZW5kLWRvdFwiIHN0eWxlPVwiYmFja2dyb3VuZDoke2NvbG9yfVwiPjwvc3Bhbj4ke25hbWV9PC9zcGFuPmApfTwvZGl2PmBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlBsb3QucGxvdCh7XG4gIG1hcmdpbkxlZnQ6IDEyMCxcbiAgbWFyZ2luQm90dG9tOiA0MCxcbiAgaGVpZ2h0OiAzMDAsXG4gIHg6IHsgbGFiZWw6IFwiSW5pdGlhdGl2ZXNcIiB9LFxuICB5OiB7IGxhYmVsOiBudWxsIH0sXG4gIG1hcmtzOiBbXG4gICAgUGxvdC5iYXJYKGZpbHRlcmVkRGF0YSwgUGxvdC5ncm91cFkoeyB4OiBcImNvdW50XCIgfSwgeyB5OiBcInJlZ2lvblwiLCBmaWxsOiBcInJlZ2lvblwiLCB0aXA6IHRydWUsIHNvcnQ6IHsgeTogXCJ4XCIsIHJldmVyc2U6IHRydWUgfSB9KSksXG4gICAgUGxvdC5ydWxlWChbMF0pXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTkiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ0b3BMZWdhbFByb3Zpc2lvbnMgPSBkMy5yb2xsdXBzKGZpbHRlcmVkRGF0YSwgdmFsdWVzID0+IHZhbHVlcy5sZW5ndGgsIGQgPT4gZC5sZWdhbF9wcm92aXNpb24pXG4gIC5zb3J0KChhLCBiKSA9PiBkMy5kZXNjZW5kaW5nKGFbMV0sIGJbMV0pKVxuICAuc2xpY2UoMCwgOClcbiAgLm1hcCgoW2xlZ2FsX3Byb3Zpc2lvbiwgY291bnRdKSA9PiAoeyBsZWdhbF9wcm92aXNpb24sIGNvdW50IH0pKVxuXG5QbG90LnBsb3Qoe1xuICBtYXJnaW5MZWZ0OiA3MCxcbiAgbWFyZ2luQm90dG9tOiA4MCxcbiAgaGVpZ2h0OiAzMDAsXG4gIHg6IHsgbGFiZWw6IG51bGwsIHRpY2tSb3RhdGU6IC0yNSB9LFxuICB5OiB7IGxhYmVsOiBcIlJlY29yZHNcIiB9LFxuICBjb2xvcjogeyBsZWdlbmQ6IGZhbHNlIH0sXG4gIG1hcmtzOiBbXG4gICAgUGxvdC5iYXJZKHRvcExlZ2FsUHJvdmlzaW9ucywgeyB4OiBcImxlZ2FsX3Byb3Zpc2lvblwiLCB5OiBcImNvdW50XCIsIGZpbGw6IFwibGVnYWxfcHJvdmlzaW9uXCIsIHRpcDogdHJ1ZSB9KSxcbiAgICBQbG90LnJ1bGVZKFswXSlcbiAgXVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTAiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ5ZWFybHlDb3VudHMgPSBkMy5yb2xsdXBzKGZpbHRlcmVkRGF0YS5maWx0ZXIoZCA9PiBkLnllYXJfaW5pdGlhdGVkKSwgdmFsdWVzID0+IHZhbHVlcy5sZW5ndGgsIGQgPT4gZC55ZWFyX2luaXRpYXRlZClcbiAgLnNvcnQoKGEsIGIpID0+IGQzLmFzY2VuZGluZyhhWzBdLCBiWzBdKSlcbiAgLm1hcCgoW3llYXJfaW5pdGlhdGVkLCBjb3VudF0pID0+ICh7IHllYXJfaW5pdGlhdGVkLCBjb3VudCB9KSlcblxuUGxvdC5wbG90KHtcbiAgbWFyZ2luTGVmdDogNjAsXG4gIG1hcmdpbkJvdHRvbTogNTAsXG4gIGhlaWdodDogMzAwLFxuICB4OiB7IGxhYmVsOiBcIlllYXIgaW5pdGlhdGVkXCIgfSxcbiAgeTogeyBsYWJlbDogXCJSZWNvcmRzXCIgfSxcbiAgbWFya3M6IFtcbiAgICBQbG90LmFyZWFZKHllYXJseUNvdW50cywgeyB4OiBcInllYXJfaW5pdGlhdGVkXCIsIHk6IFwiY291bnRcIiwgZmlsbDogXCIjOTNjNWZkXCIgfSksXG4gICAgUGxvdC5saW5lWSh5ZWFybHlDb3VudHMsIHsgeDogXCJ5ZWFyX2luaXRpYXRlZFwiLCB5OiBcImNvdW50XCIsIHN0cm9rZTogXCIjMWQ0ZWQ4XCIgfSksXG4gICAgUGxvdC5kb3QoeWVhcmx5Q291bnRzLCB7IHg6IFwieWVhcl9pbml0aWF0ZWRcIiwgeTogXCJjb3VudFwiLCBmaWxsOiBcIiMxZDRlZDhcIiwgcjogMi41LCB0aXA6IHRydWUgfSksXG4gICAgUGxvdC5ydWxlWShbMF0pXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTExIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidG9wSnVyaXNwcnVkZW5jZVR5cGVzID0gZDMucm9sbHVwcyhmaWx0ZXJlZEp1cmlzcHJ1ZGVuY2UsIHZhbHVlcyA9PiB2YWx1ZXMubGVuZ3RoLCBkID0+IGQuanVyaXNwcnVkZW5jZV90eXBlKVxuICAuc29ydCgoYSwgYikgPT4gZDMuZGVzY2VuZGluZyhhWzFdLCBiWzFdKSlcbiAgLnNsaWNlKDAsIDEwKVxuICAubWFwKChbanVyaXNwcnVkZW5jZV90eXBlLCBjb3VudF0pID0+ICh7IGp1cmlzcHJ1ZGVuY2VfdHlwZSwgY291bnQgfSkpXG5cblBsb3QucGxvdCh7XG4gIG1hcmdpbkxlZnQ6IDE0MCxcbiAgbWFyZ2luQm90dG9tOiA0MCxcbiAgaGVpZ2h0OiAzMjAsXG4gIHg6IHsgbGFiZWw6IFwiUmVjb3Jkc1wiIH0sXG4gIHk6IHsgbGFiZWw6IG51bGwgfSxcbiAgbWFya3M6IFtcbiAgICBQbG90LmJhclgodG9wSnVyaXNwcnVkZW5jZVR5cGVzLCB7IHg6IFwiY291bnRcIiwgeTogXCJqdXJpc3BydWRlbmNlX3R5cGVcIiwgZmlsbDogXCIjN2MzYWVkXCIsIHRpcDogdHJ1ZSwgc29ydDogeyB5OiBcInhcIiwgcmV2ZXJzZTogdHJ1ZSB9IH0pLFxuICAgIFBsb3QucnVsZVgoWzBdKVxuICBdXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InRvcEFjdG9yVHlwZXMgPSBkMy5yb2xsdXBzKGZpbHRlcmVkQWN0b3JUeXBlcywgdmFsdWVzID0+IHZhbHVlcy5sZW5ndGgsIGQgPT4gZC5hY3Rvcl90eXBlKVxuICAuc29ydCgoYSwgYikgPT4gZDMuZGVzY2VuZGluZyhhWzFdLCBiWzFdKSlcbiAgLnNsaWNlKDAsIDEyKVxuICAubWFwKChbYWN0b3JfdHlwZSwgY291bnRdKSA9PiAoeyBhY3Rvcl90eXBlLCBjb3VudCB9KSlcblxuUGxvdC5wbG90KHtcbiAgbWFyZ2luTGVmdDogMTcwLFxuICBtYXJnaW5Cb3R0b206IDQwLFxuICBoZWlnaHQ6IDM2MCxcbiAgeDogeyBsYWJlbDogXCJSZWNvcmRzXCIgfSxcbiAgeTogeyBsYWJlbDogbnVsbCB9LFxuICBtYXJrczogW1xuICAgIFBsb3QuYmFyWCh0b3BBY3RvclR5cGVzLCB7IHg6IFwiY291bnRcIiwgeTogXCJhY3Rvcl90eXBlXCIsIGZpbGw6IFwiIzBmNzY2ZVwiLCB0aXA6IHRydWUsIHNvcnQ6IHsgeTogXCJ4XCIsIHJldmVyc2U6IHRydWUgfSB9KSxcbiAgICBQbG90LnJ1bGVYKFswXSlcbiAgXVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJJbnB1dHMudGFibGUoZmlsdGVyZWREYXRhLCB7XG4gIGNvbHVtbnM6IFtcbiAgICBcInRpdGxlXCIsXG4gICAgXCJjb3VudHJ5X25hbWVcIixcbiAgICBcInJlZ2lvblwiLFxuICAgIFwieWVhcl9pbml0aWF0ZWRcIixcbiAgICBcImxlZ2FsX3Byb3Zpc2lvblwiLFxuICAgIFwic3RhdHVzX2N1cnJlbnRcIixcbiAgICBcImp1cmlzcHJ1ZGVuY2VfdHlwZXNcIixcbiAgICBcInBlcm1hbGlua1wiXG4gIF0sXG4gIGhlYWRlcjoge1xuICAgIHRpdGxlOiBcIlRpdGxlXCIsXG4gICAgY291bnRyeV9uYW1lOiBcIkNvdW50cnlcIixcbiAgICByZWdpb246IFwiUmVnaW9uXCIsXG4gICAgeWVhcl9pbml0aWF0ZWQ6IFwiWWVhclwiLFxuICAgIGxlZ2FsX3Byb3Zpc2lvbjogXCJMZWdhbCBQcm92aXNpb25cIixcbiAgICBzdGF0dXNfY3VycmVudDogXCJTdGF0dXNcIixcbiAgICBqdXJpc3BydWRlbmNlX3R5cGVzOiBcIkp1cmlzcHJ1ZGVuY2UgVHlwZXNcIixcbiAgICBwZXJtYWxpbms6IFwiU291cmNlXCJcbiAgfSxcbiAgZm9ybWF0OiB7XG4gICAgcGVybWFsaW5rOiB2YWx1ZSA9PiBodG1sYDxhIGhyZWY9XCIke3ZhbHVlfVwiIHRhcmdldD1cIl9ibGFua1wiIHJlbD1cIm5vb3BlbmVyIG5vcmVmZXJyZXJcIj5PcGVuPC9hPmBcbiAgfSxcbiAgd2lkdGg6IHtcbiAgICB0aXRsZTogMzYwLFxuICAgIGNvdW50cnlfbmFtZTogMTIwLFxuICAgIHJlZ2lvbjogMTIwLFxuICAgIHllYXJfaW5pdGlhdGVkOiA4MCxcbiAgICBsZWdhbF9wcm92aXNpb246IDE4MCxcbiAgICBzdGF0dXNfY3VycmVudDogMTEwLFxuICAgIGp1cmlzcHJ1ZGVuY2VfdHlwZXM6IDI0MCxcbiAgICBwZXJtYWxpbms6IDgwXG4gIH1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3NlYXJjaFF1ZXJ5JykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3NlbGVjdGVkUmVnaW9uJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3NlbGVjdGVkTGVnYWxQcm92aXNpb24nKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2VsZWN0ZWRTdGF0dXMnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2VsZWN0ZWRKdXJpc3BydWRlbmNlVHlwZScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzZWxlY3RlZEFjdG9yVHlwZScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzZWxlY3RlZFRoZW1lcycpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdtaW5ZZWFyJykifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ21heFllYXInKSJ9XX0=
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -558,14 +1022,13 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -924,7 +1387,7 @@ window._ojs.runtime.interpretFromScriptTags();
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Amareteklay/perils">
+    <a class="nav-link" href="https://github.com/shrutirkashyap/perils">
       <i class="bi bi-github" role="img">
 </i> 
     </a>

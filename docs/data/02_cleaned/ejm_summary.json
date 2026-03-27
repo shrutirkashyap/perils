@@ -1,0 +1,16 @@
+{
+  "rows": 673,
+  "regions": [
+    "Africa",
+    "Asia",
+    "Europe",
+    "International",
+    "Latin America",
+    "North America",
+    "Oceania",
+    "Unspecified"
+  ],
+  "countries": 61,
+  "min_year": 1969,
+  "max_year": 2026
+}

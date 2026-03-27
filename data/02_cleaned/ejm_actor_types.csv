@@ -1,0 +1,1014 @@
+record_id,actor_type
+1,NGO
+1,Court
+2,Civil Society
+2,NGO
+3,Government
+3,Civil Society
+3,Indigenous
+4,NGO
+4,Civil Society
+5,Civil Society
+6,Civil Society
+7,NGO
+8,NGO
+9,Civil Society
+9,NGO
+10,NGO
+11,NGO
+12,NGO
+13,NGO
+14,NGO
+15,NGO
+16,NGO
+16,Civil Society
+17,Civil Society
+18,Civil Society
+19,NGO
+19,Civil Society
+20,NGO
+20,Civil Society
+21,NGO
+21,Civil Society
+22,NGO
+23,NGO
+23,Civil Society
+24,Indigenous
+24,Civil Society
+25,Government
+27,NGO
+27,Civil Society
+28,Civil Society
+29,Civil Society
+30,Civil Society
+32,Civil Society
+33,Civil Society
+35,Indigenous
+35,NGO
+36,Indigenous
+36,Government
+37,Civil Society
+37,Government
+38,NGO
+38,Civil Society
+39,NGO
+39,Civil Society
+40,NGO
+40,Civil Society
+41,NGO
+41,Civil Society
+42,NGO
+42,Government
+43,Indigenous
+43,Civil Society
+44,NGO
+44,Civil Society
+45,Civil Society
+46,Government
+47,NGO
+47,Civil Society
+49,Government
+50,NGO
+50,Civil Society
+52,NGO
+52,Civil Society
+53,NGO
+53,Civil Society
+54,NGO
+54,Civil Society
+55,Court
+55,Government
+56,NGO
+57,Civil Society
+58,Civil Society
+59,NGO
+59,Civil Society
+60,NGO
+60,Civil Society
+61,NGO
+62,Government
+63,NGO
+63,Civil Society
+64,Civil Society
+65,Civil Society
+66,Court
+67,International
+68,NGO
+68,Civil Society
+69,Civil Society
+69,Government
+70,Indigenous
+70,Government
+71,NGO
+71,Civil Society
+72,NGO
+72,Civil Society
+74,Civil Society
+74,NGO
+75,Civil Society
+76,Government
+77,Civil Society
+78,NGO
+79,NGO
+79,Civil Society
+80,Civil Society
+80,NGO
+80,Government
+81,International
+82,NGO
+83,Government
+83,NGO
+84,Indigenous
+84,NGO
+84,Civil Society
+85,Government
+86,NGO
+87,Civil Society
+88,Indigenous
+88,NGO
+88,Civil Society
+89,Civil Society
+90,Indigenous
+90,NGO
+90,Civil Society
+91,Government
+92,NGO
+92,Civil Society
+93,International
+94,NGO
+95,NGO
+95,Civil Society
+97,NGO
+97,Civil Society
+98,NGO
+98,Civil Society
+99,Government
+100,Government
+101,Government
+102,NGO
+102,Civil Society
+103,NGO
+103,Civil Society
+104,Civil Society
+105,Government
+106,Court
+107,NGO
+107,Civil Society
+108,Government
+109,Government
+110,International
+110,Government
+111,Indigenous
+111,Government
+113,Government
+114,NGO
+114,Civil Society
+115,Government
+116,NGO
+116,Civil Society
+117,Government
+118,International
+119,International
+120,Indigenous
+120,NGO
+120,Civil Society
+121,Indigenous
+121,NGO
+121,Civil Society
+122,NGO
+123,NGO
+123,Civil Society
+123,Indigenous
+124,Government
+124,Indigenous
+125,Government
+126,Court
+127,Indigenous
+127,Government
+128,Court
+129,Government
+129,Civil Society
+130,Government
+131,Court
+131,NGO
+132,NGO
+133,NGO
+134,NGO
+135,Civil Society
+137,International
+138,NGO
+138,Court
+139,Indigenous
+139,Government
+140,Court
+141,Indigenous
+141,Government
+143,NGO
+143,Civil Society
+145,Government
+147,NGO
+148,Government
+148,NGO
+149,Court
+150,NGO
+150,Civil Society
+150,Government
+151,Indigenous
+152,Civil Society
+153,Civil Society
+153,Indigenous
+154,Government
+154,Civil Society
+155,Government
+155,Civil Society
+156,Indigenous
+156,NGO
+156,Government
+157,Indigenous
+157,NGO
+158,Civil Society
+159,NGO
+160,NGO
+160,Government
+161,NGO
+161,Civil Society
+162,NGO
+162,Civil Society
+163,Civil Society
+164,Court
+165,Civil Society
+166,NGO
+168,Indigenous
+169,NGO
+169,Civil Society
+170,Government
+171,Court
+172,Government
+173,NGO
+173,Civil Society
+174,Government
+174,NGO
+175,Court
+176,Indigenous
+176,Government
+177,Indigenous
+178,Government
+179,Government
+180,Government
+181,Civil Society
+182,Government
+184,Civil Society
+185,Indigenous
+185,Government
+186,Indigenous
+188,Government
+188,Indigenous
+189,Government
+189,NGO
+189,Civil Society
+190,Government
+191,Court
+192,Government
+193,Indigenous
+194,Government
+194,NGO
+196,Government
+197,NGO
+198,Indigenous
+200,NGO
+200,Civil Society
+201,NGO
+202,Civil Society
+203,Indigenous
+204,NGO
+205,Government
+207,Civil Society
+208,Civil Society
+211,Civil Society
+212,International
+213,NGO
+213,Civil Society
+214,Government
+215,Government
+215,NGO
+216,Government
+217,Court
+218,NGO
+219,Government
+220,Government
+221,NGO
+221,Civil Society
+221,Indigenous
+222,Government
+222,NGO
+223,Government
+224,International
+224,Government
+224,Indigenous
+224,NGO
+224,Civil Society
+225,International
+225,NGO
+225,Civil Society
+225,Government
+228,Court
+229,Civil Society
+229,NGO
+231,NGO
+232,Civil Society
+232,Government
+233,Government
+234,Government
+235,Government
+236,Government
+237,Government
+238,Government
+239,Government
+240,Government
+241,NGO
+242,NGO
+242,Civil Society
+243,NGO
+243,Civil Society
+245,Government
+245,Indigenous
+247,Government
+248,Government
+249,Government
+249,NGO
+250,Court
+251,Government
+252,NGO
+253,International
+253,Civil Society
+254,Civil Society
+254,Government
+255,International
+255,NGO
+256,Civil Society
+257,Civil Society
+257,NGO
+258,Civil Society
+258,NGO
+259,Civil Society
+260,Civil Society
+261,Civil Society
+262,Civil Society
+262,NGO
+263,Civil Society
+263,NGO
+265,Government
+266,Civil Society
+266,NGO
+267,NGO
+268,Civil Society
+268,Women
+269,NGO
+269,Civil Society
+270,Civil Society
+271,Women
+272,NGO
+272,Civil Society
+273,Civil Society
+274,Civil Society
+274,Government
+275,Indigenous
+275,NGO
+275,Civil Society
+276,NGO
+276,Civil Society
+277,Civil Society
+278,Indigenous
+279,NGO
+279,Civil Society
+280,Civil Society
+283,NGO
+283,Civil Society
+284,NGO
+284,Civil Society
+286,NGO
+286,Civil Society
+287,NGO
+287,Civil Society
+288,NGO
+288,Government
+289,Civil Society
+290,Government
+291,NGO
+291,Civil Society
+292,NGO
+292,Civil Society
+293,NGO
+293,Civil Society
+294,Civil Society
+295,NGO
+295,Civil Society
+296,NGO
+297,NGO
+297,Civil Society
+298,NGO
+298,Civil Society
+299,NGO
+299,Civil Society
+301,Civil Society
+302,Indigenous
+303,NGO
+303,Civil Society
+304,NGO
+304,Civil Society
+305,NGO
+305,Civil Society
+306,NGO
+306,Civil Society
+308,Government
+309,NGO
+309,Civil Society
+310,NGO
+310,Civil Society
+311,Civil Society
+312,Government
+313,International
+314,International
+315,International
+316,International
+317,International
+318,International
+319,International
+320,International
+321,International
+322,International
+323,International
+324,International
+325,International
+326,International
+327,International
+328,International
+329,International
+330,International
+331,International
+332,International
+333,International
+334,International
+335,International
+336,International
+337,International
+338,International
+339,NGO
+339,Civil Society
+340,Civil Society
+342,Indigenous
+342,Government
+344,Indigenous
+344,Government
+345,Government
+346,NGO
+346,International
+347,Civil Society
+348,Government
+349,Government
+350,International
+350,NGO
+351,NGO
+353,Government
+354,Indigenous
+354,NGO
+354,Civil Society
+355,Civil Society
+356,Civil Society
+357,Civil Society
+362,Civil Society
+362,NGO
+364,Indigenous
+364,NGO
+364,Civil Society
+364,Government
+365,Government
+366,Government
+367,Indigenous
+367,NGO
+367,Government
+370,Civil Society
+375,Civil Society
+376,NGO
+377,Government
+378,NGO
+378,Government
+379,Indigenous
+379,Government
+380,Civil Society
+381,Government
+382,NGO
+383,NGO
+386,Indigenous
+386,NGO
+386,Civil Society
+386,International
+387,NGO
+387,International
+389,Court
+390,Court
+391,Civil Society
+392,Civil Society
+393,Civil Society
+393,Indigenous
+393,Government
+394,Indigenous
+394,Civil Society
+396,Civil Society
+398,Indigenous
+398,Civil Society
+399,Indigenous
+399,Civil Society
+400,Government
+401,Indigenous
+401,NGO
+401,Civil Society
+402,Indigenous
+402,Civil Society
+403,Court
+405,Civil Society
+405,Indigenous
+406,Court
+407,Civil Society
+408,NGO
+408,Civil Society
+409,NGO
+409,Civil Society
+409,Government
+409,Indigenous
+410,Government
+411,Government
+413,Government
+414,Civil Society
+415,Government
+417,Indigenous
+417,Government
+419,Indigenous
+419,Government
+420,Indigenous
+420,Government
+421,NGO
+421,Government
+423,NGO
+423,Civil Society
+423,International
+424,Civil Society
+425,Civil Society
+426,Government
+427,NGO
+427,Civil Society
+428,NGO
+428,Civil Society
+429,Indigenous
+429,NGO
+429,Women
+430,Court
+431,NGO
+432,Government
+433,Civil Society
+434,Indigenous
+435,Government
+435,NGO
+435,Women
+436,NGO
+436,Civil Society
+437,Indigenous
+438,Indigenous
+439,Indigenous
+440,Indigenous
+441,Indigenous
+441,Government
+442,Indigenous
+443,Indigenous
+444,Indigenous
+445,Indigenous
+446,Indigenous
+446,Government
+447,Indigenous
+447,Government
+448,Indigenous
+448,Government
+449,Indigenous
+449,Government
+450,Indigenous
+450,Government
+451,Government
+451,Indigenous
+452,Indigenous
+453,Indigenous
+453,Government
+454,Indigenous
+454,Government
+455,Indigenous
+458,NGO
+458,Government
+459,Government
+460,Government
+460,NGO
+461,NGO
+462,Court
+463,Indigenous
+464,Indigenous
+465,Indigenous
+466,Indigenous
+466,Government
+468,Indigenous
+469,International
+469,Government
+470,Indigenous
+471,International
+472,NGO
+474,Indigenous
+474,International
+476,Indigenous
+476,International
+477,Indigenous
+478,Indigenous
+479,Indigenous
+480,Indigenous
+482,Government
+482,Indigenous
+483,Indigenous
+484,Indigenous
+484,Civil Society
+485,Government
+485,NGO
+486,International
+487,Government
+487,NGO
+488,Civil Society
+488,NGO
+489,Indigenous
+489,NGO
+490,NGO
+491,NGO
+491,Civil Society
+492,Government
+492,NGO
+493,Government
+494,Civil Society
+496,Indigenous
+496,Government
+496,NGO
+497,Civil Society
+498,NGO
+498,Civil Society
+499,Civil Society
+502,NGO
+503,Government
+504,NGO
+504,Government
+505,NGO
+505,Government
+506,Government
+507,Indigenous
+507,NGO
+507,Government
+508,Civil Society
+509,Civil Society
+510,Government
+511,NGO
+511,Government
+512,NGO
+512,Government
+513,NGO
+513,Government
+514,NGO
+514,Government
+515,Government
+515,Civil Society
+517,Government
+517,NGO
+517,Civil Society
+518,NGO
+518,Government
+519,Government
+520,Indigenous
+520,Civil Society
+521,Civil Society
+522,Government
+523,Indigenous
+525,Indigenous
+525,NGO
+525,Government
+524,Civil Society
+524,NGO
+526,Government
+527,Government
+527,NGO
+528,Civil Society
+529,Government
+529,NGO
+529,Women
+530,Government
+531,NGO
+531,Government
+532,NGO
+532,Government
+532,NGO
+532,Government
+533,NGO
+533,Government
+534,Court
+535,Government
+536,Government
+537,Government
+538,Government
+539,Government
+541,Government
+541,NGO
+541,Indigenous
+542,Court
+543,Indigenous
+543,Youth
+544,Government
+544,NGO
+545,NGO
+546,Government
+547,Government
+547,NGO
+548,Court
+549,Indigenous
+549,Civil Society
+551,Government
+552,NGO
+552,Civil Society
+553,NGO
+553,Civil Society
+554,Government
+555,Government
+556,Government
+557,Government
+558,Government
+559,Unspecified
+561,Government
+561,Civil Society
+561,Indigenous
+562,NGO
+562,Civil Society
+563,Civil Society
+563,NGO
+564,Civil Society
+565,Government
+565,NGO
+566,NGO
+567,Indigenous
+567,NGO
+567,Civil Society
+568,Government
+569,Government
+569,Civil Society
+570,Government
+570,Civil Society
+570,Indigenous
+571,Government
+571,Civil Society
+572,Government
+572,Civil Society
+572,NGO
+573,Government
+574,Civil Society
+575,Government
+576,Government
+576,NGO
+577,Government
+577,Civil Society
+578,NGO
+578,Civil Society
+579,Government
+580,Government
+581,Indigenous
+582,Government
+582,NGO
+582,Civil Society
+583,Court
+584,Government
+585,Civil Society
+587,International
+588,Government
+589,Government
+589,NGO
+589,Indigenous
+590,NGO
+590,Civil Society
+591,Government
+592,Government
+592,Civil Society
+592,NGO
+593,Indigenous
+593,Civil Society
+594,NGO
+594,Indigenous
+595,Government
+596,Civil Society
+597,NGO
+598,Government
+599,NGO
+600,Indigenous
+601,Indigenous
+601,NGO
+602,Government
+602,NGO
+603,Court
+604,Court
+604,NGO
+605,Civil Society
+605,Women
+605,Youth
+606,NGO
+606,Civil Society
+607,Civil Society
+607,Women
+608,Government
+609,Government
+610,Civil Society
+611,Court
+612,Civil Society
+613,NGO
+614,Indigenous
+614,NGO
+615,Court
+616,Government
+616,Civil Society
+617,Indigenous
+618,Civil Society
+619,Civil Society
+620,Court
+621,Court
+622,NGO
+622,Government
+623,International
+624,NGO
+624,Government
+625,Government
+626,Government
+627,Government
+628,Civil Society
+628,NGO
+629,Civil Society
+629,NGO
+630,Government
+651,Government
+651,Civil Society
+651,Government
+631,Government
+632,Government
+633,Government
+634,Indigenous
+635,Government
+636,NGO
+638,Government
+638,NGO
+638,Civil Society
+639,Civil Society
+640,NGO
+642,Government
+643,Civil Society
+643,Indigenous
+644,Civil Society
+645,Government
+647,Court
+647,International
+648,Government
+649,Government
+650,Government
+652,Civil Society
+652,Government
+653,Civil Society
+653,NGO
+654,Civil Society
+654,NGO
+655,Government
+656,NGO
+657,Government
+658,Government
+661,Indigenous
+662,Civil Society
+662,Indigenous
+662,NGO
+662,International
+663,Civil Society
+663,Government
+664,Civil Society
+664,Women
+665,Court
+666,Civil Society
+667,NGO
+668,Civil Society
+669,Government
+670,Government
+670,Civil Society
+671,Government
+671,NGO
+672,Youth
+672,Civil Society
+673,NGO
+673,Civil Society
+675,Indigenous
+675,NGO
+676,Indigenous
+676,Youth
+676,Women
+677,Civil Society
+678,Indigenous
+678,NGO
+679,Indigenous
+680,NGO
+681,NGO
+682,Government
+686,Indigenous
+687,NGO
+688,Civil Society
+688,NGO
+689,Government
+690,NGO
+690,Civil Society
+691,Government
+692,Government
+693,Indigenous
+694,NGO
+695,Court
+697,Indigenous
+698,NGO
+698,Indigenous
+698,Government
+699,NGO
+699,Indigenous
+699,Government
+700,Government
+701,Government
+701,Civil Society
+703,Civil Society
+703,Government
+704,Government
+705,Indigenous
+705,Government
+706,Government
+706,NGO
+707,Civil Society
+707,Indigenous
+707,NGO
+707,Government
+708,Civil Society
+709,Civil Society
+709,Court
+710,Civil Society
+711,Civil Society
+711,NGO
+712,Civil Society
+712,Women
+714,Civil Society
+714,Women
+715,Government
+716,Government
+717,Government
+717,Civil Society
+717,NGO
+718,Government
+718,Civil Society
+719,Government
+720,NGO
+720,International
+721,NGO
+721,International
+722,NGO
+722,International
+723,NGO
+723,Indigenous
+723,International
+724,NGO
+724,International
+725,NGO
+725,International
+727,NGO
+726,Government
+728,Government
+729,Government
+730,NGO
+730,Civil Society
+731,Government
+732,Government
+734,Government
+735,Civil Society
+736,Civil Society
+736,Women
+737,Government
+737,Civil Society
+738,Civil Society
+739,Government
+739,Court
+740,Civil Society
+740,NGO
+741,Government
+742,Government
+743,Government
+743,Government
+744,Civil Society
+744,NGO
+747,Government
+747,Women
+749,NGO
+750,NGO
+751,Government
+752,Civil Society
+753,Civil Society

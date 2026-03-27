@@ -1,0 +1,45 @@
+---
+title: "Methodology"
+---
+
+::: {.content-wrap}
+
+## Data pipeline
+
+The atlas is built from the EJM research dataset and prepared as an analysis-ready layer for interactive browsing, filtering, and visualization.
+
+The public-facing interface relies on a structured derivative of the research dataset that supports:
+
+- record-level browsing
+- multi-value jurisprudence and actor-type analysis
+- summary statistics used across the atlas
+
+### Cleaning decisions
+
+The current transformation makes a few deliberate simplifications so the Quarto front end can filter and chart the data reliably.
+
+- Country values such as `US|USA` are split into a display country and a preserved raw value.
+- Pipe-delimited multi-value fields are retained for reference and also expanded for charting.
+- Status fields are condensed into a current-status field and a status-history string.
+- Repeated theme and actor indicators are kept as numeric 0/1 flags for filtering.
+- Numeric caretaking and representation codes are preserved, but not yet heavily featured in the UI because they still need clearer documentation.
+
+### Current limitations
+
+Several fields in the source data deserve more explicit decoding before they become first-class interface elements.
+
+- `Caretaking System`
+- `Caretaking Actor`
+- `Representation`
+- The distinction between `Indigenous` and `Indigenous.1`
+
+Until those codes are fully documented, the atlas emphasizes better-understood fields such as legal provision type, jurisprudence framing, actor type, status, region, and year.
+
+### Next recommended improvements
+
+- Add a documented codebook for numeric and compound categorical fields
+- Produce detail pages or modal record views with fuller citations and status timelines
+- Add automated tests for data-shape regressions before rendering
+- Extend methodology notes with source provenance and update cadence
+
+:::

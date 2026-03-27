@@ -1,268 +1,282 @@
-/* =========================================================
-   Perils — Modern polish + dashboard UI + Observable Inputs
-   Save as: assets/styles.css
-   ========================================================= */
-
-/* ---------- Design tokens ---------- */
-:root{
-  --surface: rgba(255,255,255,0.86);
+:root {
+  --surface: rgba(255, 255, 255, 0.88);
+  --surface-strong: rgba(255, 255, 255, 0.96);
   --text: #0f172a;
   --muted: #475569;
-
-  --primary-color: #2c3e50;
-  --secondary-color: #3498db;
-
+  --primary-color: #1d4ed8;
+  --secondary-color: #0f766e;
+  --border: rgba(15, 23, 42, 0.1);
   --radius: 14px;
-
   --shadow-sm: 0 6px 18px rgba(2, 8, 23, 0.06);
-  --shadow-md: 0 18px 40px rgba(2, 8, 23, 0.10);
-
-  --border: rgba(15, 23, 42, 0.10);
+  --shadow-md: 0 18px 40px rgba(2, 8, 23, 0.1);
 }
 
-/* ---------- Base ---------- */
-body{
+body {
   color: var(--text);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   background:
-    radial-gradient(1200px 600px at 20% 10%, rgba(52,152,219,0.16), transparent 60%),
-    radial-gradient(900px 450px at 80% 0%, rgba(231,76,60,0.10), transparent 55%),
-    linear-gradient(180deg, #f7f9fc 0%, #ffffff 55%, #f7f9fc 100%);
+    radial-gradient(1200px 600px at 20% 10%, rgba(29, 78, 216, 0.14), transparent 60%),
+    radial-gradient(900px 450px at 80% 0%, rgba(15, 118, 110, 0.11), transparent 55%),
+    linear-gradient(180deg, #f8fafc 0%, #ffffff 55%, #f8fafc 100%);
 }
 
-#quarto-content, .page-columns, main.content{
+#quarto-content,
+.page-columns,
+main.content {
   padding-top: 1.25rem;
 }
 
-h1, h2, h3{ letter-spacing: -0.02em; }
-h1{ font-weight: 750; line-height: 1.1; }
-h2{ font-weight: 700; margin-top: 2rem; }
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
 
-/* ---------- Navbar ---------- */
-.navbar{
-  border-bottom: 1px solid rgba(15,23,42,0.08);
+h1 {
+  font-weight: 760;
+  line-height: 1.08;
+}
+
+h2 {
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+.navbar {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
   backdrop-filter: blur(10px);
 }
-.navbar .navbar-brand{
+
+.navbar .navbar-brand,
+.navbar .nav-link {
   font-weight: 700;
-  letter-spacing: -0.01em;
-}
-.navbar .nav-link{
-  font-weight: 600;
-  opacity: 0.92;
-}
-.navbar .nav-link:hover{ opacity: 1; }
-
-.navbar-dark{
-  background: rgba(15,23,42,0.92) !important;
-  border-bottom: 1px solid rgba(255,255,255,0.10);
 }
 
-.navbar .container-fluid{
+.navbar .container-fluid {
   max-width: 1100px;
   margin: 0 auto;
 }
 
-/* ---------- Cards / sections ---------- */
-.card, .filter-section, .feature-card, .about-section, .contact-form{
+.card,
+.filter-section,
+.feature-card,
+.about-section,
+.contact-form,
+.detail-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
 }
 
-.filter-section{ padding: 1.25rem; }
-
-.feature-card{
-  border-left: 4px solid rgba(52,152,219,0.9);
-  padding-left: 1.5rem;
+.filter-section,
+.detail-card,
+.contact-form {
+  padding: 1.25rem;
 }
 
-/* ---------- Stat cards ---------- */
-.stat-card{
+.detail-card {
+  margin-top: 1rem;
+}
+
+.feature-card {
+  border-left: 4px solid rgba(29, 78, 216, 0.9);
+  padding: 1rem 1.25rem;
+}
+
+.stat-card {
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
-  padding: 1.5rem 1.25rem;
+  padding: 1.2rem 1.1rem;
   position: relative;
   overflow: hidden;
 }
-.stat-card::after{
-  content:"";
-  position:absolute;
-  inset:-60px -60px auto auto;
+
+.stat-card::after {
+  content: "";
+  position: absolute;
+  inset: -60px -60px auto auto;
   width: 180px;
   height: 180px;
-  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), transparent 60%);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.28), transparent 60%);
   transform: rotate(10deg);
 }
-.stat-card h3{ font-size: 2.2rem; margin: 0; }
-.stat-card p{ margin: 0.45rem 0 0 0; opacity: 0.92; }
 
-/* ---------- Hero ---------- */
-.hero{ margin: 0.5rem 0 1.25rem 0; }
-.hero-inner{
-  padding: 1.25rem;
-  border-radius: 16px;
-  border: 1px solid rgba(15,23,42,0.10);
-  background: rgba(255,255,255,0.86);
-  box-shadow: 0 16px 38px rgba(2,8,23,0.08);
+.stat-card h3 {
+  font-size: 1.9rem;
+  margin: 0;
 }
-.hero h1{ margin: 0 0 0.35rem 0; }
-.hero-subtitle{
+
+.stat-card p {
+  margin: 0.35rem 0 0;
+  opacity: 0.92;
+}
+
+.hero {
+  margin: 0.5rem 0 1.25rem;
+}
+
+.hero-inner {
+  padding: 1.5rem;
+  border-radius: 18px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: var(--surface-strong);
+  box-shadow: 0 16px 38px rgba(2, 8, 23, 0.08);
+}
+
+.hero-inner h1 {
+  margin: 0 0 0.45rem;
+}
+
+.hero-subtitle {
   color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.55;
+  font-size: 1.06rem;
+  line-height: 1.6;
+  max-width: 760px;
 }
 
-/* ---------- KPI grid ---------- */
-.kpi-grid{
+.kpi-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.85rem;
-  margin: 0.85rem 0 0 0;
+  margin-top: 0.85rem;
 }
 
-/* ---------- Map container ---------- */
-.map-container{
-  height: 650px;
+.map-container {
+  height: 680px;
   width: 100%;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(15,23,42,0.10);
-  box-shadow: 0 18px 42px rgba(2,8,23,0.10);
-  background: rgba(255,255,255,0.94);
-  position: relative;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 18px 42px rgba(2, 8, 23, 0.1);
+  background: rgba(255, 255, 255, 0.94);
 }
-.map-inner{ height: 100%; width: 100%; }
 
-.leaflet-control{
+.map-inner {
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-control {
   border-radius: 12px !important;
   overflow: hidden;
-  box-shadow: 0 10px 26px rgba(2,8,23,0.14);
+  box-shadow: 0 10px 26px rgba(2, 8, 23, 0.14);
 }
-.leaflet-bar a{ border-radius: 0 !important; }
 
-/* ---------- Legend ---------- */
-.legend{
+.legend {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
   margin-top: 12px;
   padding: 10px 12px;
   border-radius: 14px;
-  border: 1px solid rgba(15,23,42,0.10);
-  background: rgba(255,255,255,0.86);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.9);
 }
-.legend-item{
+
+.legend-item {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-weight: 600;
   color: #334155;
 }
-.legend-item::before{
-  content:"";
+
+.legend-item::before {
+  display: none;
+}
+
+.legend-dot {
   width: 12px;
   height: 12px;
   border-radius: 999px;
   display: inline-block;
-  box-shadow: 0 6px 14px rgba(2,8,23,0.15);
+  box-shadow: 0 6px 14px rgba(2, 8, 23, 0.15);
 }
-.legend-item:nth-child(1)::before{ background: #3498db; }
-.legend-item:nth-child(2)::before{ background: #f39c12; }
-.legend-item:nth-child(3)::before{ background: #e74c3c; }
-.legend-item:nth-child(4)::before{ background: #9b59b6; }
 
-/* =========================================================
-   Contact form (Observable Inputs) — cleaned + fixed layout
-   ========================================================= */
-
-.contact-form{
-  max-width: 750px;
+.contact-form {
+  max-width: 760px;
   margin: 1.5rem auto;
-  padding: 1.25rem;
 }
 
-/* Hide Quarto code copy button inside the card */
-.contact-form .code-copy-button{ display: none !important; }
+.contact-form .code-copy-button {
+  display: none !important;
+}
 
-/* Kill Observable “blue bar” borders and padding */
 .contact-form .observablehq,
 .contact-form .observablehq--inspect,
 .contact-form .observablehq--field,
 .contact-form form,
-.contact-form fieldset{
+.contact-form fieldset,
+.filter-section .observablehq,
+.filter-section .observablehq--inspect,
+.filter-section .observablehq--field,
+.filter-section form,
+.filter-section fieldset {
   border-left: none !important;
   padding-left: 0 !important;
   max-width: 100% !important;
 }
 
-/* Force single-column stacking (fixes textarea + button placement) */
-.contact-form form{
+.contact-form form,
+.filter-section form {
   display: grid !important;
   grid-template-columns: 1fr !important;
   gap: 0.6rem !important;
-  margin: 0 0 0.9rem 0 !important;
+  margin: 0 0 0.9rem !important;
 }
 
-/* Labels */
-.contact-form form > label{
+.contact-form form > label,
+.filter-section form > label {
   font-weight: 650;
-  color: rgba(15,23,42,0.80);
+  color: rgba(15, 23, 42, 0.8);
   margin: 0;
 }
 
-/* Controls */
 .contact-form input,
 .contact-form select,
-.contact-form textarea{
+.contact-form textarea,
+.filter-section input,
+.filter-section select,
+.filter-section textarea {
   width: 100% !important;
   box-sizing: border-box;
-  padding: 0.7rem 0.85rem;
-  border: 1px solid rgba(15,23,42,0.14);
+  padding: 0.72rem 0.85rem;
+  border: 1px solid rgba(15, 23, 42, 0.14);
   border-radius: 12px;
   font-size: 1rem;
-  background: rgba(255,255,255,0.92);
+  background: rgba(255, 255, 255, 0.94);
   transition: box-shadow 0.2s, border-color 0.2s;
 }
 
-/* Select arrow */
-.contact-form select{
-  appearance: none;
-  background-image:
-    linear-gradient(45deg, transparent 50%, rgba(15,23,42,0.55) 50%),
-    linear-gradient(135deg, rgba(15,23,42,0.55) 50%, transparent 50%);
-  background-position:
-    calc(100% - 18px) 50%,
-    calc(100% - 13px) 50%;
-  background-size: 6px 6px, 6px 6px;
-  background-repeat: no-repeat;
-  padding-right: 2.25rem;
-}
-
-/* Focus */
 .contact-form input:focus,
 .contact-form select:focus,
-.contact-form textarea:focus{
+.contact-form textarea:focus,
+.filter-section input:focus,
+.filter-section select:focus,
+.filter-section textarea:focus {
   outline: none;
-  border-color: rgba(52,152,219,0.55);
-  box-shadow: 0 0 0 4px rgba(52,152,219,0.18);
+  border-color: rgba(29, 78, 216, 0.55);
+  box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.18);
 }
 
-.contact-form textarea{
+.contact-form textarea {
   min-height: 160px;
   resize: vertical;
 }
 
-/* Button */
-.contact-form button{
+.filter-section input[type="range"] {
+  padding: 0;
+}
+
+.contact-form button,
+.filter-section button {
   width: 100% !important;
   display: block !important;
   margin-top: 0.25rem;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: white;
   padding: 0.85rem 1rem;
   border: none;
@@ -271,92 +285,86 @@ h2{ font-weight: 700; margin-top: 2rem; }
   cursor: pointer;
   font-weight: 700;
   transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 10px 22px rgba(52,152,219,0.22);
+  box-shadow: 0 10px 22px rgba(29, 78, 216, 0.22);
 }
 
-.contact-form button:hover{
-  background-color: var(--primary-color);
-  box-shadow: 0 14px 28px rgba(44,62,80,0.22);
+.contact-form button:hover,
+.filter-section button:hover {
+  background-color: #1e3a8a;
+  box-shadow: 0 14px 28px rgba(30, 58, 138, 0.22);
   transform: translateY(-1px);
 }
 
-/* Success message */
-.form-success{
+.form-success {
   padding: 1rem;
   margin-top: 1rem;
   border-radius: 12px;
-  border: 1px solid rgba(34,197,94,0.30);
-  background: rgba(34,197,94,0.10);
-  color: rgba(21,87,36,0.95);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  background: rgba(34, 197, 94, 0.1);
+  color: rgba(21, 87, 36, 0.95);
 }
 
-/* Mobile */
-@media (max-width: 480px){
-  .contact-form{ padding: 1rem; }
-  .contact-form input, .contact-form select, .contact-form textarea{
-    padding: 0.65rem 0.75rem;
+.content-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0.25rem 1rem 2rem;
+}
+
+.content-wrap p,
+.content-wrap li {
+  line-height: 1.75;
+  color: rgba(15, 23, 42, 0.88);
+  font-size: 1.03rem;
+}
+
+.content-wrap h2 {
+  margin-top: 1.75rem;
+}
+
+.page-footer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.1);
+  color: var(--muted);
+}
+
+.page-footer a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(71, 85, 105, 0.35);
+}
+
+.page-footer a:hover {
+  border-bottom-color: rgba(71, 85, 105, 0.75);
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 500px;
+  }
+
+  .hero-inner {
+    padding: 1.2rem;
   }
 }
 
-/* ---------- Footer ---------- */
-.page-footer{
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(15,23,42,0.10);
-  color: var(--muted);
-}
-.page-footer a{
-  color: inherit;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(71,85,105,0.35);
-}
-.page-footer a:hover{
-  border-bottom-color: rgba(71,85,105,0.75);
-}
+@media (max-width: 480px) {
+  .contact-form,
+  .filter-section,
+  .detail-card {
+    padding: 1rem;
+  }
 
-/* ---------- Observable inputs in filter-section ---------- */
-.filter-section form{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.45rem;
-  margin: 0 0 0.95rem 0;
-}
-.filter-section form > label{
-  font-weight: 650;
-  color: #334155;
-  margin: 0;
-}
-.filter-section select,
-.filter-section input[type="number"],
-.filter-section input[type="text"]{
-  width: 100%;
-  border-radius: 12px;
-  border: 1px solid rgba(15,23,42,0.14);
-  padding: 0.6rem 0.75rem;
-  background: rgba(255,255,255,0.92);
-}
-.filter-section input[type="range"]{ width: 100%; }
-.filter-section select:focus,
-.filter-section input:focus{
-  outline: none;
-  border-color: rgba(52,152,219,0.55);
-  box-shadow: 0 0 0 4px rgba(52,152,219,0.18);
-}
-.filter-section .observablehq,
-.filter-section .observablehq--inspect,
-.filter-section .observablehq--field{
-  max-width: 100%;
-}
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea,
+  .filter-section input,
+  .filter-section select,
+  .filter-section textarea {
+    padding: 0.66rem 0.75rem;
+  }
 
-/* ---------- Centered content pages ---------- */
-.content-wrap{
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0.25rem 1rem 2rem 1rem;
+  .map-container {
+    height: 420px;
+  }
 }
-.content-wrap p{
-  line-height: 1.75;
-  color: rgba(15,23,42,0.88);
-  font-size: 1.03rem;
-}
-.content-wrap h2{ margin-top: 1.75rem; }

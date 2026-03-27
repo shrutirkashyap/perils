@@ -2,6 +2,11 @@
 /.quarto/
 /_site/
 /docs/.quarto/
+/site_libs/
+/verify/
+/preview.ps1
+/render.ps1
+/scripts/render_quarto_local.ps1
 
 # R
 .Rproj.user

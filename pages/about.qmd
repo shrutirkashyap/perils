@@ -1,61 +1,65 @@
 ---
-title: ""
+title: "About"
 ---
 
-:::  {.content-wrap}
+::: {.content-wrap}
 
 ## About the Atlas
 
-The Environmental Risk Atlas is an interactive platform designed to visualize and monitor environmental risks across the globe. Our mission is to provide accessible, data-driven insights into the environmental challenges facing different regions worldwide.
+Perils is an interactive atlas for exploring ecological jurisprudence initiatives across the world. It brings together geocoded records on court cases, legislation, constitutions, declarations, indigenous law, policy instruments, and related governance efforts that reshape how nature, ecosystems, and non-human beings are represented in law and public decision-making.
 
-### Our Mission
+### What the atlas currently does
 
-We believe that understanding environmental risks is the first step toward building resilience and developing effective mitigation strategies. By making complex environmental data accessible and interactive, we aim to:
+The site combines a global map, filterable analytics, and a searchable record table so users can move between broad patterns and individual initiatives.
 
-- **Raise Awareness:** Help communities understand the environmental risks they face
-- **Support Decision-Making:** Provide policymakers with data-driven insights
-- **Enable Research:** Facilitate environmental research and analysis
-- **Foster Collaboration:** Connect stakeholders working on environmental resilience
+It is designed to help users answer questions such as:
 
-### What We Track
+- Where ecological jurisprudence initiatives are emerging
+- Which legal provision types are most common
+- How rights of nature, personhood, indigenous models, animal rights, and eco-governance appear across the dataset
+- Which actor types are initiating these efforts
+- How the initiative landscape changes over time
 
-Our platform monitors four major categories of environmental risks:
+### Main dimensions in the dataset
 
-::: {.feature-card}
-#### 🌊 Flood Risks
-Monitoring areas vulnerable to flooding from rivers, coastal surge, and extreme precipitation events.
-:::
+The current atlas highlights several high-value dimensions in the research dataset:
 
-::: {.feature-card}
-#### 🌵 Drought Conditions
-Tracking regions experiencing water scarcity and prolonged periods of insufficient rainfall.
-:::
+- Geography: region, country, and location
+- Time: year initiated and status history
+- Legal form: court case, legislation, constitution, declaration, policy, and related forms
+- Jurisprudence framing: rights of nature, personhood, indigenous models, local eco knowledge, animal rights, and eco-governance
+- Actor information: initiating actor names and actor types
+- Ecological focus: ecological actors, ecosystems, and representation-related fields
 
-::: {.feature-card}
-#### 🔥 Wildfire Threats
-Identifying areas at high risk of wildfires due to dry conditions, vegetation, and climate factors.
-:::
+### Why this matters
 
-::: {.feature-card}
-#### 🌪️ Storm Events
-Monitoring severe weather patterns including hurricanes, cyclones, and extreme storm systems.
-:::
+Ecological jurisprudence is not only a legal taxonomy. It is also a way to examine how environmental governance, indigenous knowledge systems, ecological representation, and rights-based claims interact across jurisdictions. A global atlas makes it easier to compare these initiatives, identify patterns, and surface outliers worth deeper research.
 
-### Get Involved
+### Current scope
 
-We welcome collaboration from:
+This version of the atlas uses a curated research dataset prepared for interactive analysis, mapping, and comparative exploration.
 
-- Environmental scientists and researchers
-- Data scientists and developers
-- Policy makers and planners
-- Community organizations
-- Anyone interested in environmental resilience
+### Team and institutional information
 
-Visit our [Contact page](contact.qmd) to get in touch or contribute to the project.
+For an academic or research-facing site, the best place to present the team behind the project is on this page. A concise section here should list:
 
-### Open Source
+- Principal investigator or project lead
+- Research collaborators and data contributors
+- Institutional affiliations
+- Project contact or correspondence email
+- Funding body or supporting institution, if relevant
 
-This project is open source and available on GitHub. We encourage contributions, feedback, and collaboration from the community.
+If the team grows, a dedicated Team page can be added later, but the About page is the right starting point.
+
+### Collaboration
+
+Useful next contributions include:
+
+- Improving source data validation and documentation
+- Decoding and documenting currently numeric coded fields
+- Adding richer detail views for individual records
+- Expanding methodology notes and citation guidance
+- Tightening accessibility and mobile polish across the atlas
 
 ---
 

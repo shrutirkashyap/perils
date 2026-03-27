@@ -8,19 +8,18 @@ format:
 
 ::: {.content-wrap}
 
-We'd love to hear from you! Whether you have questions, suggestions, or want to collaborate, feel free to reach out.
+We'd love to hear from you. Use this page for questions about the atlas, collaboration opportunities, dataset corrections, or ideas for extending the project.
 
-### Contact Form
+### Contact form
 
 ::: {.contact-form}
 ```{ojs}
 //| echo: false
-
 viewof contactForm = Inputs.form({
   Name: Inputs.text({ placeholder: "Your name" }),
   Email: Inputs.text({ placeholder: "your.email@example.com", type: "email" }),
   Subject: Inputs.select(
-    ["General Inquiry", "Data Question", "Collaboration", "Technical Support", "Other"],
+    ["General Inquiry", "Data Correction", "Collaboration", "Technical Support", "Other"],
     { value: "General Inquiry" }
   ),
   Message: Inputs.textarea({ placeholder: "Your message here...", rows: 6 })
@@ -28,24 +27,23 @@ viewof contactForm = Inputs.form({
 ```
 ```{ojs}
 //| echo: false
-viewof submit = Inputs.button("Send Message", {value: 0})
+viewof submit = Inputs.button("Send Message", { value: 0 })
 ```
 
 ```{ojs}
 //| echo: false
-
 submissionResult = {
   if (contactForm && contactForm.Name && contactForm.Email && contactForm.Message) {
     return html`
-      <div style="margin-top: 1rem; padding: 1rem; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; color: #155724;">
-        <strong>✓ Thank you for your message!</strong><br>
-        We'll get back to you at <b>${contactForm.Email}</b> as soon as possible.
+      <div class="form-success">
+        <strong>Thank you for your message.</strong><br>
+        We'll get back to <b>${contactForm.Email}</b> as soon as possible.
         <br><br>
-        <em>Note: This is a demo form. In production, this would integrate with an email service or backend API.</em>
+        <em>This is still a demo form. In production, it should connect to an email service or backend endpoint.</em>
       </div>
-    `;
+    `
   }
-  return html``;
+  return html``
 }
 ```
 

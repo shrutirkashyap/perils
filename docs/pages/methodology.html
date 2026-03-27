@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Perils</title>
+<title>Methodology – Perils</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -94,11 +94,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../pages/about.html" aria-current="page"> 
+    <a class="nav-link" href="../pages/about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../pages/methodology.html"> 
+    <a class="nav-link active" href="../pages/methodology.html" aria-current="page"> 
 <span class="menu-text">Methodology</span></a>
   </li>  
   <li class="nav-item">
@@ -122,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Methodology</h1>
 </div>
 
 
@@ -139,65 +139,45 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="about-the-atlas" class="level2 content-wrap">
-<h2 class="anchored" data-anchor-id="about-the-atlas">About the Atlas</h2>
-<p>Perils is an interactive atlas for exploring ecological jurisprudence initiatives across the world. It brings together geocoded records on court cases, legislation, constitutions, declarations, indigenous law, policy instruments, and related governance efforts that reshape how nature, ecosystems, and non-human beings are represented in law and public decision-making.</p>
-<section id="what-the-atlas-currently-does" class="level3">
-<h3 class="anchored" data-anchor-id="what-the-atlas-currently-does">What the atlas currently does</h3>
-<p>The site combines a global map, filterable analytics, and a searchable record table so users can move between broad patterns and individual initiatives.</p>
-<p>It is designed to help users answer questions such as:</p>
+<section id="data-pipeline" class="level2 content-wrap">
+<h2 class="anchored" data-anchor-id="data-pipeline">Data pipeline</h2>
+<p>The atlas is built from the EJM research dataset and prepared as an analysis-ready layer for interactive browsing, filtering, and visualization.</p>
+<p>The public-facing interface relies on a structured derivative of the research dataset that supports:</p>
 <ul>
-<li>Where ecological jurisprudence initiatives are emerging</li>
-<li>Which legal provision types are most common</li>
-<li>How rights of nature, personhood, indigenous models, animal rights, and eco-governance appear across the dataset</li>
-<li>Which actor types are initiating these efforts</li>
-<li>How the initiative landscape changes over time</li>
+<li>record-level browsing</li>
+<li>multi-value jurisprudence and actor-type analysis</li>
+<li>summary statistics used across the atlas</li>
+</ul>
+<section id="cleaning-decisions" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-decisions">Cleaning decisions</h3>
+<p>The current transformation makes a few deliberate simplifications so the Quarto front end can filter and chart the data reliably.</p>
+<ul>
+<li>Country values such as <code>US|USA</code> are split into a display country and a preserved raw value.</li>
+<li>Pipe-delimited multi-value fields are retained for reference and also expanded for charting.</li>
+<li>Status fields are condensed into a current-status field and a status-history string.</li>
+<li>Repeated theme and actor indicators are kept as numeric 0/1 flags for filtering.</li>
+<li>Numeric caretaking and representation codes are preserved, but not yet heavily featured in the UI because they still need clearer documentation.</li>
 </ul>
 </section>
-<section id="main-dimensions-in-the-dataset" class="level3">
-<h3 class="anchored" data-anchor-id="main-dimensions-in-the-dataset">Main dimensions in the dataset</h3>
-<p>The current atlas highlights several high-value dimensions in the research dataset:</p>
+<section id="current-limitations" class="level3">
+<h3 class="anchored" data-anchor-id="current-limitations">Current limitations</h3>
+<p>Several fields in the source data deserve more explicit decoding before they become first-class interface elements.</p>
 <ul>
-<li>Geography: region, country, and location</li>
-<li>Time: year initiated and status history</li>
-<li>Legal form: court case, legislation, constitution, declaration, policy, and related forms</li>
-<li>Jurisprudence framing: rights of nature, personhood, indigenous models, local eco knowledge, animal rights, and eco-governance</li>
-<li>Actor information: initiating actor names and actor types</li>
-<li>Ecological focus: ecological actors, ecosystems, and representation-related fields</li>
+<li><code>Caretaking System</code></li>
+<li><code>Caretaking Actor</code></li>
+<li><code>Representation</code></li>
+<li>The distinction between <code>Indigenous</code> and <code>Indigenous.1</code></li>
 </ul>
+<p>Until those codes are fully documented, the atlas emphasizes better-understood fields such as legal provision type, jurisprudence framing, actor type, status, region, and year.</p>
 </section>
-<section id="why-this-matters" class="level3">
-<h3 class="anchored" data-anchor-id="why-this-matters">Why this matters</h3>
-<p>Ecological jurisprudence is not only a legal taxonomy. It is also a way to examine how environmental governance, indigenous knowledge systems, ecological representation, and rights-based claims interact across jurisdictions. A global atlas makes it easier to compare these initiatives, identify patterns, and surface outliers worth deeper research.</p>
-</section>
-<section id="current-scope" class="level3">
-<h3 class="anchored" data-anchor-id="current-scope">Current scope</h3>
-<p>This version of the atlas uses a curated research dataset prepared for interactive analysis, mapping, and comparative exploration.</p>
-</section>
-<section id="team-and-institutional-information" class="level3">
-<h3 class="anchored" data-anchor-id="team-and-institutional-information">Team and institutional information</h3>
-<p>For an academic or research-facing site, the best place to present the team behind the project is on this page. A concise section here should list:</p>
+<section id="next-recommended-improvements" class="level3">
+<h3 class="anchored" data-anchor-id="next-recommended-improvements">Next recommended improvements</h3>
 <ul>
-<li>Principal investigator or project lead</li>
-<li>Research collaborators and data contributors</li>
-<li>Institutional affiliations</li>
-<li>Project contact or correspondence email</li>
-<li>Funding body or supporting institution, if relevant</li>
+<li>Add a documented codebook for numeric and compound categorical fields</li>
+<li>Produce detail pages or modal record views with fuller citations and status timelines</li>
+<li>Add automated tests for data-shape regressions before rendering</li>
+<li>Extend methodology notes with source provenance and update cadence</li>
 </ul>
-<p>If the team grows, a dedicated Team page can be added later, but the About page is the right starting point.</p>
-</section>
-<section id="collaboration" class="level3">
-<h3 class="anchored" data-anchor-id="collaboration">Collaboration</h3>
-<p>Useful next contributions include:</p>
-<ul>
-<li>Improving source data validation and documentation</li>
-<li>Decoding and documenting currently numeric coded fields</li>
-<li>Adding richer detail views for individual records</li>
-<li>Expanding methodology notes and citation guidance</li>
-<li>Tightening accessibility and mobile polish across the atlas</li>
-</ul>
-<hr>
-<p><em>Last updated: March 2026</em></p>
 </section>
 </section>
 

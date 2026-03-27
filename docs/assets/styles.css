@@ -64,7 +64,8 @@ h2 {
 .feature-card,
 .about-section,
 .contact-form,
-.detail-card {
+.detail-card,
+.team-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -194,6 +195,71 @@ h2 {
   border-radius: 999px;
   display: inline-block;
   box-shadow: 0 6px 14px rgba(2, 8, 23, 0.15);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
+  margin-top: 1rem;
+}
+
+.team-card {
+  padding: 1.35rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.92));
+}
+
+.team-card h4 {
+  margin: 0.9rem 0 0.2rem;
+  font-size: 1.25rem;
+}
+
+.team-role {
+  color: var(--secondary-color);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.85rem;
+}
+
+\.team-avatar,`r`n.team-photo {
+  width: 68px;
+  height: 68px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1d4ed8, #0f766e);
+  box-shadow: 0 14px 28px rgba(29, 78, 216, 0.2);
+}
+
+.team-avatar-alt {
+  background: linear-gradient(135deg, #7c3aed, #1d4ed8);
+}
+
+.team-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.team-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.86);
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.team-links a:hover {
+  border-color: rgba(29, 78, 216, 0.22);
+  color: #1d4ed8;
 }
 
 .contact-form {
@@ -346,12 +412,17 @@ h2 {
   .hero-inner {
     padding: 1.2rem;
   }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 480px) {
   .contact-form,
   .filter-section,
-  .detail-card {
+  .detail-card,
+  .team-card {
     padding: 1rem;
   }
 

@@ -39,17 +39,45 @@ Ecological jurisprudence is not only a legal taxonomy. It is also a way to exami
 
 This version of the atlas uses a curated research dataset prepared for interactive analysis, mapping, and comparative exploration.
 
-### Team and institutional information
+### Team
 
-For an academic or research-facing site, the best place to present the team behind the project is on this page. A concise section here should list:
+::: {.team-grid}
+::: {.team-card}
+<img src="../assets/shruti-kashyap.jpeg" alt="Portrait of Shruti Kashyap" class="team-photo">
 
-- Principal investigator or project lead
-- Research collaborators and data contributors
-- Institutional affiliations
-- Project contact or correspondence email
-- Funding body or supporting institution, if relevant
+#### Shruti Kashyap
 
-If the team grows, a dedicated Team page can be added later, but the About page is the right starting point.
+<div class="team-role">Project Owner</div>
+
+Project lead responsible for the research direction, dataset stewardship, and overall scope of the atlas.
+
+<div class="team-links">
+<a href="mailto:shruti.kashyap@su.se">Email</a>
+<a href="https://www.linkedin.com/in/owner-profile/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a href="https://github.com/shrutirkashyap" target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+:::
+
+::: {.team-card}
+<div class="team-avatar team-avatar-alt" aria-hidden="true">YW</div>
+
+#### Amare Teklay Hailu
+
+<div class="team-role">Website Design and Development</div>
+
+Designed and built the website interface, interactive atlas structure, and frontend presentation for the project.
+
+<div class="team-links">
+<a href="mailto:amare.hailu@kva.se">Email</a>
+<a href="https://www.linkedin.com/in/amareteklay/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a href="https://github.com/amareteklay" target="_blank" rel="noopener noreferrer">GitHub</a>
+</div>
+:::
+:::
+
+::: {.detail-card}
+You can keep a mixed layout if needed: one real portrait and one placeholder avatar until the second image is ready.
+:::
 
 ### Collaboration
 
